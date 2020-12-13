@@ -4,4 +4,10 @@ export const FaqWrapper = styled.section`
 
 margin-top: 5rem;
 margin-bottom: 7rem;
+
+details{
+
+    margin-bottom: 1rem;
+}
+
 `
