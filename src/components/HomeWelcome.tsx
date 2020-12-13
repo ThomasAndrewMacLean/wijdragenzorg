@@ -14,7 +14,14 @@ const HomeWelcom = ({}: PropsType) => {
         </button>
       </div>
 
-      <Image style={{ width: '75%' }} imageKey="hero-image" />
+      <Image
+        style={{
+          maxWidth: '75%',
+          maxHeight: '450px',
+          transform: 'rotateY(180deg)',
+        }}
+        imageKey="nurse-image"
+      />
     </Styles.HomeWelcomWrapper>
   );
 };

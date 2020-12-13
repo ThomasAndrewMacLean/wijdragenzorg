@@ -107,13 +107,13 @@ const NavLink = styled.a<{ active: boolean }>`
     display: ${(props) => (props.active ? 'block' : 'none')};
     width: 100%;
     height: 2px;
-    background: var(--background-dark);
+    background: var(--colour-highlight);
   }
 
   &:hover {
     .imageCircle {
-      background: var(--background-light);
-      border: 2px solid var(--background-dark);
+      background: var(--colour-highlight);
+      border: 2px solid var(--colour-highlight);
       transform: scale(1.2);
     }
   }
@@ -133,7 +133,7 @@ const NavLink = styled.a<{ active: boolean }>`
     border: 2px solid var(--colour-black);
 
     background: ${(props) =>
-      props.active ? 'var(--background-dark)' : 'none'};
+      props.active ? 'var(--colour-highlight)' : 'none'};
     border-radius: 100px;
     height: 40px;
     width: 40px;
