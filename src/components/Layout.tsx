@@ -27,6 +27,7 @@ const Layout = ({ children, page }: LayoutProps) => {
                         <div className="imageCircle">
                           <Image imageKey={pag.id + 'Logo'}></Image>
                         </div>
+
                         <T translationKey={pag.id + 'Title'}></T>
                       </NavLink>
                     </li>
@@ -63,21 +64,6 @@ const Main = styled.main`
   }
 `;
 const Header = styled.header`
-  .imageCircle {
-    img {
-      height: 20px;
-      opacity: 0.8;
-      width: 20px;
-    }
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid var(--colour-black);
-    border-radius: 100px;
-    height: 40px;
-    width: 40px;
-  }
   width: 100vw;
   background: var(--colour-white);
   left: 0;
@@ -88,7 +74,7 @@ const Header = styled.header`
       font-weight: 100;
       font-family: Homemade Apple;
       em {
-        color: var(--colour-gold);
+        color: var(--background-dark);
       }
     }
     width: 90%;
@@ -120,8 +106,39 @@ const NavLink = styled.a<{ active: boolean }>`
     content: '';
     display: ${(props) => (props.active ? 'block' : 'none')};
     width: 100%;
-    height: 3px;
-    background: black;
+    height: 2px;
+    background: var(--background-dark);
+  }
+
+  &:hover {
+    .imageCircle {
+      background: var(--background-light);
+      border: 2px solid var(--background-dark);
+      transform: scale(1.2);
+    }
+  }
+
+  .imageCircle {
+    img {
+      height: 20px;
+      opacity: ${(props) => (props.active ? '1' : '0.8')};
+      width: 20px;
+
+      filter: ${(props) => props.active && 'invert(1)'};
+    }
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--colour-black);
+
+    background: ${(props) =>
+      props.active ? 'var(--background-dark)' : 'none'};
+    border-radius: 100px;
+    height: 40px;
+    width: 40px;
+
+    transition: all 300ms ease;
   }
 `;
 const Footer = styled.footer`
@@ -134,7 +151,7 @@ const Footer = styled.footer`
   }
 
   width: 100vw;
-  background: var(--background-light);
+  background: var(--colour-highlight);
   left: 0;
   margin-left: calc(450px - 50vw);
 

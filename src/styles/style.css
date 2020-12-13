@@ -9,7 +9,7 @@
   font-display: swap;
 }
 :root {
-  --background-dark: #fdc562;
+  --background-dark: #f0ad36;
   --colour-gold: #c6953d;
   --colour-black: #271510;
   --colour-white: #fff;
@@ -33,6 +33,7 @@ body {
 
   width: 100%;
   overflow-x: hidden;
+  color: #333;
 }
 ul {
   margin-left: 2rem;
@@ -42,8 +43,21 @@ ul {
 li {
   padding-bottom: 0.5rem;
 }
-
+p {
+  line-height: 1.8em;
+}
 .showKeys {
   background: pink !important;
   color: red !important;
+}
+
+.btn {
+  padding: 8px 24px;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: none;
+  border: 2px solid var(--colour-black);
+  background-color: var(--colour-highlight);
+  text-transform: uppercase;
 }

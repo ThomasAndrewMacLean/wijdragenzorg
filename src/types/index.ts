@@ -14,6 +14,11 @@ export type ImagesType = {
   }[];
 };
 
+export type FaqsType = {
+  Vraag: string;
+  Antwoord: string;
+
+}
 export type SEOType = {
   id: string;
   text?: string;
