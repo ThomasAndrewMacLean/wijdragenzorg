@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import { T } from '.';
+import { T, Image } from '.';
 import { prefix } from '../utils';
 import { pages } from '../constants/pages';
 
@@ -14,28 +14,41 @@ const Layout = ({ children, page }: LayoutProps) => {
   return (
     <Main>
       <Header>
-        <T translationKey="title"></T>
-        <nav>
-          <ul>
-          {pages
-              .filter((p) => p.showInNav)
-              .map((pag, i) => {
-                return (
-                  <li key={i}>
-                    <NavLink active={page === pag.id} href={prefix + pag.url}>
-                      <T translationKey={pag.id + 'Title'}></T>
-                    </NavLink>
-                  </li>
-                );
-              })}
-        
-          </ul>
-        </nav>
+        <div className="headerWrap">
+          <T translationKey="title"></T>
+          <nav>
+            <ul>
+              {pages
+                .filter((p) => p.showInNav)
+                .map((pag, i) => {
+                  return (
+                    <li key={i}>
+                      <NavLink active={page === pag.id} href={prefix + pag.url}>
+                        <div className="imageCircle">
+                          <Image imageKey={pag.id + 'Logo'}></Image>
+                        </div>
+                        <T translationKey={pag.id + 'Title'}></T>
+                      </NavLink>
+                    </li>
+                  );
+                })}
+            </ul>
+          </nav>
+        </div>
       </Header>
-      {children}
+      <div className="pageWrap">{children}</div>
       <Footer>
-        <div>facebook</div>
-        <address>contact</address>
+        <div className="footerWrap">
+          <a href="https://www.facebook.com" target="blank">
+            facebook
+          </a>
+          <a href="https://www.instagram.com" target="blank">
+            instagram
+          </a>
+          <a href="mailto:verpleging@wijdragenzorg.be" target="blank">
+            email
+          </a>
+        </div>
       </Footer>
     </Main>
   );
@@ -45,23 +58,56 @@ const Main = styled.main`
   margin: auto;
   width: 90%;
   max-width: 900px;
+  .pageWrap {
+    min-height: calc(100vh - 349px);
+  }
 `;
 const Header = styled.header`
-  h1 {
-    font-weight: 100;
-  }
-  display: flex;
-  justify-content: space-between;
-  padding: 4rem 0;
-  nav {
-  }
-  ul {
-    flex-direction: row;
+  .imageCircle {
+    img {
+      height: 20px;
+      opacity: 0.8;
+      width: 20px;
+    }
+    margin: auto;
     display: flex;
-    list-style: none;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--colour-black);
+    border-radius: 100px;
+    height: 40px;
+    width: 40px;
+  }
+  width: 100vw;
+  background: var(--colour-white);
+  left: 0;
+  margin-left: calc(450px - 50vw);
 
-    li {
-      margin: 0 1rem;
+  .headerWrap {
+    h1 {
+      font-weight: 100;
+      font-family: Homemade Apple;
+      em {
+        color: var(--colour-gold);
+      }
+    }
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 0;
+    nav {
+    }
+    ul {
+      flex-direction: row;
+      display: flex;
+      list-style: none;
+
+      li {
+        margin: 0 1rem;
+      }
     }
   }
 `;
@@ -79,9 +125,29 @@ const NavLink = styled.a<{ active: boolean }>`
   }
 `;
 const Footer = styled.footer`
-  display: flex;
-  justify-content: space-between;
-  padding: 2rem 0;
+  .footerWrap {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem 0;
+  }
+
+  width: 100vw;
+  background: var(--background-light);
+  left: 0;
+  margin-left: calc(450px - 50vw);
+
+  @media only screen and (max-width: 1000px) {
+    margin-left: -5vw;
+    .footerWrap {
+      padding: 3rem;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 `;
 
 Layout.propTypes = {

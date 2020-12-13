@@ -11,15 +11,15 @@ import {
 } from '../utils/contexts';
 import { getDataFromAirtable } from '../utils';
 
-const ContactPage = ({ translations, pics, seo }: ContactPageProps) => {
+const RegiosPage = ({ translations, pics, seo }: RegiosPageProps) => {
   return (
     <PictureContext.Provider value={pics}>
       <SEOContext.Provider value={seo}>
         <TranslationContext.Provider value={translations}>
-          <Layout page="contact">
+          <Layout page="regios">
             <Main>
               <SEO seo={seo}></SEO>
-              <h1>Contact</h1>
+              <h1>Regios</h1>
             </Main>
           </Layout>
         </TranslationContext.Provider>
@@ -29,7 +29,7 @@ const ContactPage = ({ translations, pics, seo }: ContactPageProps) => {
 };
 
 const Main = styled.main`
-  background: var(--background-dark);
+   
 `;
 
 export const getStaticProps = async () => {
@@ -42,9 +42,10 @@ export const getStaticProps = async () => {
     },
   };
 };
-type ContactPageProps = {
+type RegiosPageProps = {
   translations: TranslationsType[];
   pics: ImagesType[];
   seo: SEOType[];
 };
-export default ContactPage;
+export default RegiosPage;
+

@@ -1,24 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
-// import PropTypes from 'prop-types';
+import { TranslationsType, ImagesType, SEOType } from '../types';
 
 import { Layout, SEO } from '../components';
+
 import {
   TranslationContext,
   PictureContext,
   SEOContext,
 } from '../utils/contexts';
 import { getDataFromAirtable } from '../utils';
-import { TranslationsType, ImagesType, SEOType } from '../types';
 
-const IndexPage = ({ translations, pics, seo }: IndexPageProps) => {
+const TeamPage = ({ translations, pics, seo }: TeamPageProps) => {
   return (
     <PictureContext.Provider value={pics}>
       <SEOContext.Provider value={seo}>
         <TranslationContext.Provider value={translations}>
-          <Layout page="home">
+          <Layout page="team">
             <Main>
               <SEO seo={seo}></SEO>
+              <h1>Team</h1>
             </Main>
           </Layout>
         </TranslationContext.Provider>
@@ -41,11 +42,10 @@ export const getStaticProps = async () => {
     },
   };
 };
-
-type IndexPageProps = {
+type TeamPageProps = {
   translations: TranslationsType[];
   pics: ImagesType[];
   seo: SEOType[];
 };
+export default TeamPage;
 
-export default IndexPage;
