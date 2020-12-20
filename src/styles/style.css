@@ -16,6 +16,7 @@
   --colour-highlight: #a8e1f1;
   --border: 3px solid black;
   --background-light: #fee1b0;
+  --background-secondary-lighter: #a8e1f198;
   --background-lighter: #fee1b059;
 }
 * {
@@ -31,7 +32,6 @@
 html,
 body {
   font-family: 'Roboto Slab', sans-serif;
-
   width: 100%;
   overflow-x: hidden;
   color: #333;
@@ -75,4 +75,8 @@ em {
 h2 {
   margin-bottom: 2rem;
   font-weight: 200;
+}
+
+section {
+  margin-bottom: 7rem;
 }

@@ -1,8 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { TranslationsType, ImagesType, SEOType, TeamLidType } from '../types';
+import {
+  TranslationsType,
+  ImagesType,
+  SEOType,
+  TeamLidType,
+  FaqsType,
+} from '../types';
 
-import { Layout, SEO, Teamleden } from '../components';
+import { Layout, SEO, Teamleden, Faq, Contact } from '../components';
 
 import {
   TranslationContext,
@@ -12,7 +18,13 @@ import {
 } from '../utils/contexts';
 import { getDataFromAirtable } from '../utils';
 
-const TeamPage = ({ translations, pics, seo, teamleden }: TeamPageProps) => {
+const TeamPage = ({
+  translations,
+  pics,
+  seo,
+  teamleden,
+  faqs,
+}: TeamPageProps) => {
   return (
     <PictureContext.Provider value={pics}>
       <SEOContext.Provider value={seo}>
@@ -21,7 +33,9 @@ const TeamPage = ({ translations, pics, seo, teamleden }: TeamPageProps) => {
             <Layout page="team">
               <Main>
                 <SEO seo={seo}></SEO>
-                <Teamleden teamleden={teamleden}/>
+                <Teamleden teamleden={teamleden} />
+                <Contact></Contact>
+                <Faq faqs={faqs}></Faq>
               </Main>
             </Layout>
           </TeamledenContext.Provider>
@@ -41,6 +55,7 @@ export const getStaticProps = async () => {
       pics: data.pics.filter((x) => x.id),
       seo: data.seo.filter((x) => x.id),
       teamleden: data.Teamleden.filter((x) => x.Naam),
+      faqs: data.Faqs.filter((x) => x.Vraag),
     },
   };
 };
@@ -49,5 +64,6 @@ type TeamPageProps = {
   pics: ImagesType[];
   seo: SEOType[];
   teamleden: TeamLidType[];
+  faqs: FaqsType[];
 };
 export default TeamPage;

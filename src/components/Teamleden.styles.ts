@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const TeamledenWrapper = styled.section`
-
     .omschrijving{
         display: flex;
         align-items: flex-start;

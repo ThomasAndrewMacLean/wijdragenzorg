@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 // import PropTypes from 'prop-types';
 
-import { Layout, SEO, Faq, HomeWelcome, About } from '../components';
+import { Layout, SEO, Faq, HomeWelcome, About, Contact } from '../components';
 import {
   TranslationContext,
   PictureContext,
@@ -23,6 +23,7 @@ const IndexPage = ({ translations, pics, seo, faqs }: IndexPageProps) => {
                 <SEO seo={seo}></SEO>
                 <HomeWelcome></HomeWelcome>
                 <About></About>
+                <Contact></Contact>
                 <Faq faqs={faqs}></Faq>
               </Main>
             </Layout>
