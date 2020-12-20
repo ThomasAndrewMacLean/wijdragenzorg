@@ -69,6 +69,10 @@ const Header = styled.header`
   left: 0;
   margin-left: calc(450px - 50vw);
 
+  @media only screen and (max-width: 1000px) {
+    margin-left: -5vw;
+  }
+
   .headerWrap {
     h1 {
       font-weight: 100;
@@ -83,6 +87,17 @@ const Header = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media only screen and (max-width: 660px) {
+      flex-direction: column;
+      nav {
+        margin-top: 2rem;
+
+        ul {
+          margin-left: 0;
+        }
+      }
+    }
+
     padding: 4rem 0;
     nav {
     }

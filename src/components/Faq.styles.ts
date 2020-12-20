@@ -33,6 +33,9 @@ details[open] summary ~ * {
 
     position: absolute;
     top: 20px;
+    @media only screen and (max-width: 660px) {
+        top: -50px;
+            }
     right: 10%;
     border: 5px solid var(--background-dark);
     padding: 10px;
@@ -50,6 +53,7 @@ details[open] summary ~ * {
     }
 
     .tooltip{
+        pointer-events: none;
        // display: none;
         opacity: 0;
         transition: opacity 300ms ease;

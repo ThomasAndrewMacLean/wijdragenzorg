@@ -2,6 +2,9 @@ import styled from 'styled-components'
 
 export const QuoteWrapper = styled.section`
     font-size:2rem;
+    @media only screen and (max-width: 660px) {
+      font-size:1.6rem;
+}
     font-weight:200;
     text-align:center;
     .quote{

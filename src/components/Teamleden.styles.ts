@@ -4,13 +4,20 @@ export const TeamledenWrapper = styled.section`
     .omschrijving{
         display: flex;
         align-items: flex-start;
-
+        margin-bottom: 5rem;
         span{
             width: 60%;
+
+            @media only screen and (max-width: 660px) {
+                width: 100%;
+            }
         }
         img{
             transform: translateY(-90px);
             width: 40%;
+            @media only screen and (max-width: 660px) {
+       display:none;
+            }
         }
     }
 
@@ -19,6 +26,13 @@ export const TeamledenWrapper = styled.section`
     margin-left:0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
+    @media only screen and (max-width: 960px) {
+        grid-template-columns: 1fr 1fr ;
+            }
+
+            @media only screen and (max-width: 500px) {
+        grid-template-columns: 1fr ;
+            }
     gap: 4rem 2rem;
  
     list-style: none;

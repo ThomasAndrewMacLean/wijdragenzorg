@@ -18,6 +18,7 @@ const HomeWelcom = ({}: PropsType) => {
         style={{
           maxWidth: '75%',
           maxHeight: '450px',
+          objectFit: 'cover',
           transform: 'rotateY(180deg)',
         }}
         imageKey="nurse-image"

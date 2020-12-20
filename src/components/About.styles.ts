@@ -14,6 +14,12 @@ export const AboutWrapper = styled.section`
           li{
               margin-bottom:4px;
           }
+
+@media only screen and (max-width: 660px) {
+    -webkit-column-count: 1;
+     -moz-column-count: 1;
+          column-count: 1;
+}
 }
 
 
@@ -23,5 +29,9 @@ img{
     bottom: -20%;
     right: -25%;
     height: 110%;
+
+    @media only screen and (max-width: 660px) {
+   display:none;
+}
 }
 `

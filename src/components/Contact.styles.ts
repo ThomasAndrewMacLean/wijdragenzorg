@@ -10,9 +10,16 @@ export const ContactWrapper = styled.section`
     display: flex;
         align-items: center;
     justify-content: space-between;
+
+    @media only screen and (max-width: 660px) {
+      flex-direction: column;
+    }
         .textWrap{
             font-weight:200;
             width: 60%;
+             @media only screen and (max-width: 660px) {
+                width: 100%;
+            }
             padding: 2rem;
             border-radius:15px;
 
@@ -21,7 +28,10 @@ export const ContactWrapper = styled.section`
         img{
           
             width: 35%;
-            //z-index:-1;
+            @media only screen and (max-width: 660px) {
+                width: 100%;
+                margin-bottom: 2rem;
+            }
         }
 
         .addressLine{
