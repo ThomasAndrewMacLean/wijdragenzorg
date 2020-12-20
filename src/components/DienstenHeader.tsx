@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Styles from './DienstenHeader.styles';
-import { Image, T } from '.';
+import { T } from '.';
 import { DienstType } from '../types';
 type PropsType = { diensten: DienstType[] };
 const DienstenHeader = ({ diensten }: PropsType) => {

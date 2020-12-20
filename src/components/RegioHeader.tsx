@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Styles from './RegioHeader.styles';
-import { Image, T } from '.';
+import { T } from '.';
 
 type PropsType = {};
 const RegioHeader = ({}: PropsType) => {
