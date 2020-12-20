@@ -2,7 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { TranslationsType, ImagesType, SEOType, DienstType } from '../types';
 
-import { Layout, SEO, DienstenHeader, DienstenLijst } from '../components';
+import {
+  Layout,
+  SEO,
+  DienstenHeader,
+  DienstenLijst,
+  Quote,
+} from '../components';
 
 import {
   TranslationContext,
@@ -26,6 +32,7 @@ const DienstenPage = ({
               <SEO seo={seo}></SEO>
               <DienstenHeader />
               <DienstenLijst diensten={diensten} />
+              <Quote quoteId="textQuote3"></Quote>
             </Main>
           </Layout>
         </TranslationContext.Provider>

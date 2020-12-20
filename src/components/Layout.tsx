@@ -151,7 +151,7 @@ const Footer = styled.footer`
   }
 
   width: 100vw;
-  background: var(--colour-highlight);
+  background: var(--background-secondary-lighter);
   left: 0;
   margin-left: calc(450px - 50vw);
 

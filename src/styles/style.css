@@ -16,8 +16,9 @@
   --colour-highlight: #a8e1f1;
   --border: 3px solid black;
   --background-light: #fee1b0;
-  --background-secondary-lighter: #a8e1f198;
   --background-lighter: #fee1b059;
+  --background-secondary-lighter: #a8e1f198;
+  --background-grey: #e1e1e18c;
 }
 * {
   margin: 0;
