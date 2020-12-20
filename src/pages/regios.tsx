@@ -1,8 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import { TranslationsType, ImagesType, SEOType } from '../types';
+import { TranslationsType, ImagesType, SEOType, FaqsType } from '../types';
 
-import { Layout, SEO } from '../components';
+import {
+  Layout,
+  SEO,
+  RegioHeader,
+  About,
+  Faq,
+  Contact,
+  Map,
+  Quote,
+} from '../components';
 
 import {
   TranslationContext,
@@ -11,7 +20,7 @@ import {
 } from '../utils/contexts';
 import { getDataFromAirtable } from '../utils';
 
-const RegiosPage = ({ translations, pics, seo }: RegiosPageProps) => {
+const RegiosPage = ({ translations, pics, seo, faqs }: RegiosPageProps) => {
   return (
     <PictureContext.Provider value={pics}>
       <SEOContext.Provider value={seo}>
@@ -19,7 +28,12 @@ const RegiosPage = ({ translations, pics, seo }: RegiosPageProps) => {
           <Layout page="regios">
             <Main>
               <SEO seo={seo}></SEO>
-              <h1>Regios</h1>
+              <RegioHeader />
+              <Map></Map>
+              <Quote quoteId="textQuote1"></Quote>
+              <About></About>
+              <Contact></Contact>
+              <Faq faqs={faqs}></Faq>
             </Main>
           </Layout>
         </TranslationContext.Provider>
@@ -28,9 +42,7 @@ const RegiosPage = ({ translations, pics, seo }: RegiosPageProps) => {
   );
 };
 
-const Main = styled.main`
-   
-`;
+const Main = styled.main``;
 
 export const getStaticProps = async () => {
   const data = await getDataFromAirtable();
@@ -39,6 +51,7 @@ export const getStaticProps = async () => {
       translations: data.translations.filter((x) => x.id),
       pics: data.pics.filter((x) => x.id),
       seo: data.seo.filter((x) => x.id),
+      faqs: data.Faqs.filter((x) => x.Vraag),
     },
   };
 };
@@ -46,6 +59,6 @@ type RegiosPageProps = {
   translations: TranslationsType[];
   pics: ImagesType[];
   seo: SEOType[];
+  faqs: FaqsType[];
 };
 export default RegiosPage;
-
