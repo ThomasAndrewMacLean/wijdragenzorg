@@ -1,8 +1,14 @@
 import styled from 'styled-components'
 
 export const DienstenHeaderWrapper = styled.section`
-    h2{
-        text-transform: capitalize;
-    }
 
+    ul{
+        margin-top: 2rem;
+        /* list-style:none; */
+
+        a{
+            color: inherit;
+        }
+
+    }
 `

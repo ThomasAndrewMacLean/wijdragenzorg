@@ -30,7 +30,7 @@ const DienstenPage = ({
           <Layout page="diensten">
             <Main>
               <SEO seo={seo}></SEO>
-              <DienstenHeader />
+              <DienstenHeader diensten={diensten} />
               <DienstenLijst diensten={diensten} />
               <Quote quoteId="textQuote3"></Quote>
             </Main>
