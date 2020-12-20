@@ -8,7 +8,7 @@ const DienstenHeader = ({}: PropsType) => {
       <h2>
         <T translationKey="dienstenTitle"></T>
       </h2>
-      <Image style={{ maxWidth: '100%' }} imageKey="butterfly-image"></Image>
+      {/* <Image style={{ maxWidth: '100%' }} imageKey="butterfly-image"></Image> */}
     </Styles.DienstenHeaderWrapper>
   );
 };

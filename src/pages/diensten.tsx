@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { TranslationsType, ImagesType, SEOType } from '../types';
+import { TranslationsType, ImagesType, SEOType, DienstType } from '../types';
 
-import { Layout, SEO, DienstenHeader } from '../components';
+import { Layout, SEO, DienstenHeader, DienstenLijst } from '../components';
 
 import {
   TranslationContext,
@@ -11,7 +11,12 @@ import {
 } from '../utils/contexts';
 import { getDataFromAirtable } from '../utils';
 
-const DienstenPage = ({ translations, pics, seo }: DienstenPageProps) => {
+const DienstenPage = ({
+  translations,
+  pics,
+  seo,
+  diensten,
+}: DienstenPageProps) => {
   return (
     <PictureContext.Provider value={pics}>
       <SEOContext.Provider value={seo}>
@@ -20,6 +25,7 @@ const DienstenPage = ({ translations, pics, seo }: DienstenPageProps) => {
             <Main>
               <SEO seo={seo}></SEO>
               <DienstenHeader />
+              <DienstenLijst diensten={diensten} />
             </Main>
           </Layout>
         </TranslationContext.Provider>
@@ -37,6 +43,7 @@ export const getStaticProps = async () => {
       translations: data.translations.filter((x) => x.id),
       pics: data.pics.filter((x) => x.id),
       seo: data.seo.filter((x) => x.id),
+      diensten: data.Diensten.filter((x) => x.Naam),
     },
   };
 };
@@ -44,5 +51,6 @@ type DienstenPageProps = {
   translations: TranslationsType[];
   pics: ImagesType[];
   seo: SEOType[];
+  diensten: DienstType[];
 };
 export default DienstenPage;

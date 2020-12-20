@@ -1,4 +1,4 @@
-import { SEOType, TranslationsType, ImagesType,FaqsType, TeamLidType } from '../types';
+import { SEOType, TranslationsType, ImagesType,FaqsType, TeamLidType, DienstType } from '../types';
 import marked from 'marked';
 
 
@@ -42,6 +42,7 @@ export const getDataFromAirtable = async (): Promise<{
   pics: ImagesType[];
   Faqs: FaqsType[];
   Teamleden: TeamLidType[];
+  Diensten: DienstType[];
 }> => {
   const url =
     'https://europe-west1-thomasmaclean.cloudfunctions.net/getDataAirtable';
@@ -51,7 +52,7 @@ export const getDataFromAirtable = async (): Promise<{
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ airtableApp: process.env.AIRTABLE_APP,extraCols :["Faqs", "Teamleden"] }),
+    body: JSON.stringify({ airtableApp: process.env.AIRTABLE_APP,extraCols :["Faqs", "Teamleden", "Diensten"] }),
   });
   const dataFromAirtable = await dataFromAirtableJson.json();
 

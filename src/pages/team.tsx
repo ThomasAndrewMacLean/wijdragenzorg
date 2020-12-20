@@ -8,7 +8,7 @@ import {
   FaqsType,
 } from '../types';
 
-import { Layout, SEO, Teamleden, Faq, Contact } from '../components';
+import { Layout, SEO, Teamleden, Faq, Contact,About } from '../components';
 
 import {
   TranslationContext,
@@ -36,6 +36,7 @@ const TeamPage = ({
                 <Teamleden teamleden={teamleden} />
                 <Contact></Contact>
                 <Faq faqs={faqs}></Faq>
+                <About></About>
               </Main>
             </Layout>
           </TeamledenContext.Provider>
