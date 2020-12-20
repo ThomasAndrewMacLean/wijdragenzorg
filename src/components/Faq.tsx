@@ -30,6 +30,9 @@ const Faq = ({ faqs }: PropsType) => {
       <div className="right">
         <div className="imageWrap">
           <Image imageKey="faqLogo"></Image>
+          <div className="tooltip">
+            <T translationKey="nogVragen"></T>
+          </div>
         </div>
       </div>
     </Styles.FaqWrapper>

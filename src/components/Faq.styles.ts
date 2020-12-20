@@ -46,12 +46,34 @@ details[open] summary ~ * {
     img{
         height: 25px;
         filter: invert();
+        transition: transform 300ms ease;
     }
-    transition: transform 300ms ease;
 
+    .tooltip{
+       // display: none;
+        opacity: 0;
+        transition: opacity 300ms ease;
+        position: absolute;
+        top: 70px;
+        width: 250px;
+        right: 15%;
+        background-color: var(--background-light);
+        padding: 1rem 2rem;
+        text-align:center;
+        border-radius:15px;
+     }
     &:hover{
-        transform: scale(1.1) rotate(10deg);
+        img{
+            transform: scale(1.1) rotate(10deg);
+        }
+        .tooltip{
+        opacity: 1;
+        display: block;
+        
     }
+    }
+
+
 }
 
 `
