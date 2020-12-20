@@ -25,8 +25,8 @@ details[open] summary ~ * {
 }
 
 @keyframes sweep {
-  0%    {opacity: 0; margin-left: -10px}
-  100%  {opacity: 1; margin-left: 0px}
+  0%    {opacity: 0; transform: translateX(-10px)}
+  100%  {opacity: 1;transform: translateX(0px)}
 }
 
 .imageWrap{
