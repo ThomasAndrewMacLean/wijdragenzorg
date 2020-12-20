@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400;800&display=swap');
 @font-face {
   font-family: 'Homemade Apple';
   src: url('../../public/HomemadeApple-Regular.woff2') format('woff2'),
@@ -16,6 +16,7 @@
   --colour-highlight: #a8e1f1;
   --border: 3px solid black;
   --background-light: #fee1b0;
+  --background-lighter: #fee1b059;
 }
 * {
   margin: 0;
@@ -65,4 +66,8 @@ p {
 
 .btn:hover {
   transform: scale(1.1);
+}
+
+em {
+  font-family: Homemade Apple;
 }

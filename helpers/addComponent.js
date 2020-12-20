@@ -23,7 +23,7 @@ export default XXXXX
 
 const styles = `import styled from 'styled-components'
 
-export const XXXXXWrapper = styled.div\`\`
+export const XXXXXWrapper = styled.section\`\`
 `;
 
 rl.question('What will be the new component? ', function (componentName) {

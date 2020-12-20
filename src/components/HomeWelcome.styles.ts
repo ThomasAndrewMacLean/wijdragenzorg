@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 
-export const HomeWelcomWrapper = styled.div`
+export const HomeWelcomWrapper = styled.section`
 
 display: flex;
 justify-content: space-evenly;
@@ -15,9 +15,7 @@ justify-content: space-evenly;
     p{
         text-align:center;
         justify-content: space-evenly;
-        em{
-            font-family: Homemade Apple;
-        }
+       
     }
 }
 
