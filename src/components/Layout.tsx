@@ -28,7 +28,7 @@ const Layout = ({ children, page }: LayoutProps) => {
                           <Image imageKey={pag.id + 'Logo'}></Image>
                         </div>
 
-                        <T translationKey={pag.id + 'Title'}></T>
+                        <T translationKey={pag.id + 'NavigatieTitle'}></T>
                       </NavLink>
                     </li>
                   );

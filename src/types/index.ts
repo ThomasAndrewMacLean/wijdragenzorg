@@ -9,7 +9,7 @@ export type ImagesType = {
   pic: {
     url: string;
     thumbnails: {
-      large: string;
+      large:  {url:string};
     };
   }[];
 };
@@ -25,7 +25,20 @@ export type SEOType = {
   pic: {
     url: string;
     thumbnails: {
-      large: string;
+      large:  {url:string};
     };
   }[];
 };
+
+export type TeamLidType ={
+  Naam: string;
+  Telefoon: string;
+  Omschrijving: string;
+  Foto: {
+    url: string;
+    thumbnails: {
+      large: {url:string};
+    };
+  }[];
+
+}

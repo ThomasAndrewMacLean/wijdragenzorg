@@ -5,10 +5,7 @@ export const AboutWrapper = styled.section`
     position:relative;
     background: var(--background-lighter);
     padding: 2rem;
-h2{
-    margin-bottom:2rem;
-    font-weight:200;
-}
+
 .kwaliteiten{
     -webkit-column-count: 2;
      -moz-column-count: 2;

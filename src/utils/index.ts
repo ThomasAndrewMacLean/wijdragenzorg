@@ -1,5 +1,10 @@
-import { SEOType, TranslationsType, ImagesType,FaqsType } from '../types';
+import { SEOType, TranslationsType, ImagesType,FaqsType, TeamLidType } from '../types';
+import marked from 'marked';
 
+
+export const convertToHtml = (input: string): string => {
+  return marked(input)
+}
 export const add = (a: number, b: number): number => {
   return a + b;
 };
@@ -36,6 +41,7 @@ export const getDataFromAirtable = async (): Promise<{
   translations: TranslationsType[];
   pics: ImagesType[];
   Faqs: FaqsType[];
+  Teamleden: TeamLidType[];
 }> => {
   const url =
     'https://europe-west1-thomasmaclean.cloudfunctions.net/getDataAirtable';
@@ -45,7 +51,7 @@ export const getDataFromAirtable = async (): Promise<{
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ airtableApp: process.env.AIRTABLE_APP,extraCols :["Faqs"] }),
+    body: JSON.stringify({ airtableApp: process.env.AIRTABLE_APP,extraCols :["Faqs", "Teamleden"] }),
   });
   const dataFromAirtable = await dataFromAirtableJson.json();
 

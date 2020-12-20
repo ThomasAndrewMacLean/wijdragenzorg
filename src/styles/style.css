@@ -71,3 +71,8 @@ p {
 em {
   font-family: Homemade Apple;
 }
+
+h2 {
+  margin-bottom: 2rem;
+  font-weight: 200;
+}
