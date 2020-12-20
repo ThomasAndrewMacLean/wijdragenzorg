@@ -37,14 +37,14 @@ details[open] summary ~ * {
         top: -50px;
             }
     right: 10%;
-    border: 5px solid var(--background-dark);
+    border: 5px solid var(--background-light);
     padding: 10px;
     width: 60px;
     height: 60px;
     display: flex;
     justify-content:center;
     align-items:center;
-    background-color:var(--colour-gold);
+    background-color:var(--background-dark);
     border-radius:200px;
     img{
         height: 25px;
