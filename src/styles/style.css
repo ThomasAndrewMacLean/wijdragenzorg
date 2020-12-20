@@ -59,7 +59,8 @@ p {
   cursor: pointer;
   border: none;
   border: 2px solid var(--colour-black);
-  background-color: var(--colour-highlight);
+  border-radius: 20px;
+  background-color: var(--background-secondary-lighter);
   /* text-transform: uppercase; */
   transition: all 300ms ease;
 }
