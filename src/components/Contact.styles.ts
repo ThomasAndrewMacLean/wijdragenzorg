@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const ContactWrapper = styled.section`
      
-    //background-color: var(--background-lighter);
+
     h2{
         font-weight:400;
     }
@@ -14,6 +14,8 @@ export const ContactWrapper = styled.section`
             font-weight:200;
             width: 60%;
             padding: 2rem;
+            border-radius:15px;
+
             background-color: var(--background-secondary-lighter);
         }
         img{

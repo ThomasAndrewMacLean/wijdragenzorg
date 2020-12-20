@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const AboutWrapper = styled.section`
-    
+    border-radius:15px;
     position:relative;
     background: var(--background-lighter);
     padding: 2rem;
