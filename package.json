@@ -9,6 +9,7 @@
     "start": "next start",
     "export-sw": "next export && mv .next/sw.js out/sw.js && mv .next/workbox* out",
     "export": "next export",
+    "netlify": "next build && next export",
     "comp": "node helpers/addComponent",
     "page": "node helpers/addPage"
   },
