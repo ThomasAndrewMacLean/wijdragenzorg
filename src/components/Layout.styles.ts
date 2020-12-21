@@ -107,13 +107,9 @@ export const Footer = styled.footer`
     padding: 4rem 0;
   }
 
-  width: 100vw;
   background: var(--background-secondary-lighter);
-  left: 0;
-  margin-left: calc(450px - 50vw);
 
   @media only screen and (max-width: 1000px) {
-    margin-left: -5vw;
     .footerWrap {
       padding: 3rem;
     }

@@ -44,7 +44,7 @@ const Layout = ({ children, page }: LayoutProps) => {
         </div>
       </Styles.Header>
       <div className="pageWrap">{children}</div>
-      <Styles.Footer>
+      <Styles.Footer className="fullwidth">
         <div className="footerWrap">
           <a href="https://www.facebook.com" target="blank">
             facebook

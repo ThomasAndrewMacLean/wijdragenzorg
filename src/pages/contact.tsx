@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { TranslationsType, ImagesType, SEOType } from '../types';
+import { TranslationsType, ImagesType, SEOType, FaqsType } from '../types';
 
-import { Layout, SEO } from '../components';
+import { Layout, SEO, About, Contact, Social, Faq, Quote } from '../components';
 
 import {
   TranslationContext,
@@ -11,7 +11,7 @@ import {
 } from '../utils/contexts';
 import { getDataFromAirtable } from '../utils';
 
-const ContactPage = ({ translations, pics, seo }: ContactPageProps) => {
+const ContactPage = ({ translations, pics, seo, faqs }: ContactPageProps) => {
   return (
     <PictureContext.Provider value={pics}>
       <SEOContext.Provider value={seo}>
@@ -19,7 +19,11 @@ const ContactPage = ({ translations, pics, seo }: ContactPageProps) => {
           <Layout page="contact">
             <Main>
               <SEO seo={seo}></SEO>
-              <h1>Contact</h1>
+              <Contact></Contact>
+              <Social></Social>
+              <About></About>
+              <Quote quoteId="textQuote2"></Quote>
+              <Faq faqs={faqs}></Faq>
             </Main>
           </Layout>
         </TranslationContext.Provider>
@@ -28,9 +32,7 @@ const ContactPage = ({ translations, pics, seo }: ContactPageProps) => {
   );
 };
 
-const Main = styled.main`
-  background: var(--background-dark);
-`;
+const Main = styled.main``;
 
 export const getStaticProps = async () => {
   const data = await getDataFromAirtable();
@@ -39,6 +41,7 @@ export const getStaticProps = async () => {
       translations: data.translations.filter((x) => x.id),
       pics: data.pics.filter((x) => x.id),
       seo: data.seo.filter((x) => x.id),
+      faqs: data.Faqs.filter((x) => x.Vraag),
     },
   };
 };
@@ -46,6 +49,6 @@ type ContactPageProps = {
   translations: TranslationsType[];
   pics: ImagesType[];
   seo: SEOType[];
+  faqs: FaqsType[];
 };
 export default ContactPage;
-

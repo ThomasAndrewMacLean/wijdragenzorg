@@ -1,24 +1,24 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const QuoteWrapper = styled.section`
-    font-size:2rem;
-    @media only screen and (max-width: 660px) {
-      font-size:1.6rem;
-}
-    font-weight:200;
-    text-align:center;
-    .quote{
-        margin: auto;
-    }
-.quoteWrap {
+  font-size: 2rem;
+  @media only screen and (max-width: 660px) {
+    font-size: 1.6rem;
+  }
+  font-weight: 200;
+  text-align: center;
+  .quote {
+    margin: auto;
+  }
+  .quoteWrap {
     max-width: 900px;
     margin: auto;
     display: flex;
     justify-content: space-between;
-    padding: 4rem 0;
-}
+   
+  }
 
-background: var(--background-grey);
+  background: var(--background-grey);
   width: 100vw;
   left: 0;
   margin-left: calc(450px - 50vw);
@@ -33,8 +33,4 @@ background: var(--background-grey);
     text-decoration: none;
     color: inherit;
   }
-  
-
-
-  
-  `
+`;

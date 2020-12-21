@@ -90,3 +90,23 @@ h2 {
 section {
   margin-bottom: 7rem;
 }
+
+.fullwidth {
+  width: 100vw;
+  left: 0;
+  margin-left: calc(450px - 50vw);
+}
+
+.fullwidth .content {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  
+  padding: 4rem 0;
+}
+@media only screen and (max-width: 1000px) {
+  .fullwidth {
+    margin-left: -5vw;
+  }
+}

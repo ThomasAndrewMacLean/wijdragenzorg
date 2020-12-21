@@ -7,8 +7,8 @@ type PropsType = {
 };
 const Quote = ({ quoteId }: PropsType) => {
   return (
-    <Styles.QuoteWrapper>
-      <div className="quoteWrap">
+    <Styles.QuoteWrapper className="fullwidth">
+      <div className="content">
         <span className="quote">
           <T translationKey={quoteId}></T>
         </span>
