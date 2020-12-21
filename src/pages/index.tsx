@@ -10,6 +10,7 @@ import {
   About,
   Contact,
   Quote,
+  Social,
 } from '../components';
 import {
   TranslationContext,
@@ -33,6 +34,7 @@ const IndexPage = ({ translations, pics, seo, faqs }: IndexPageProps) => {
                 <About></About>
                 <Quote quoteId="textQuote1"></Quote>
                 <Contact></Contact>
+                <Social></Social>
                 <Faq faqs={faqs}></Faq>
               </Main>
             </Layout>

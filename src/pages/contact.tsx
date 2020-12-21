@@ -20,14 +20,7 @@ const ContactPage = ({ translations, pics, seo, faqs }: ContactPageProps) => {
             <Main>
               <SEO seo={seo}></SEO>
               <Contact></Contact>
-              <Social
-                facebookLink={
-                  seo.find((x) => x.id === 'facebookLink')?.text || ''
-                }
-                instagramLink={
-                  seo.find((x) => x.id === 'instagramLink')?.text || ''
-                }
-              ></Social>
+              <Social></Social>
               <About></About>
               <Quote quoteId="textQuote2"></Quote>
               <Faq faqs={faqs}></Faq>

@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import * as Styles from './Social.styles';
 import { T, Image } from './';
-type PropsType = { facebookLink: string; instagramLink: string };
-const Social = ({ facebookLink, instagramLink }: PropsType) => {
+import { SEOContext } from '../utils/contexts';
+
+type PropsType = {};
+const Social = ({}: PropsType) => {
+  const seoFromContext = useContext(SEOContext) || [];
+
+  const facebookLink =
+    seoFromContext.find((x) => x.id === 'facebookLink')?.text || '';
+
+  const instagramLink =
+    seoFromContext.find((x) => x.id === 'instagramLink')?.text || '';
+
   return (
     <Styles.SocialWrapper className="fullwidth">
       <div className="content">
+        <Styles.HashTag>
+          <T translationKey="socialHashTag"></T>
+        </Styles.HashTag>
         <h2>
           <T translationKey="socialTitel"></T>
         </h2>

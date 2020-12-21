@@ -6,6 +6,7 @@ export const SocialWrapper = styled.section`
 
   .content {
     flex-direction: column;
+    position: relative;
   }
   h2 {
     font-weight: 400;
@@ -30,4 +31,13 @@ export const SocialWrapper = styled.section`
       transform: scale(1.1);
     }
   }
+`;
+
+export const HashTag = styled.span`
+  position: absolute;
+  bottom: 20px;
+  right: 0px;
+  color: white;
+  font-size: 2rem;
+  text-shadow: 3px 3px 10px var(--colour-gold);
 `;
