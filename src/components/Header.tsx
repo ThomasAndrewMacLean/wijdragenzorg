@@ -11,7 +11,9 @@ const Header = ({ page }: PropsType) => {
       <div className="headerWrap">
         <Link href={prefix || ''}>
           <a>
-            <T translationKey="title"></T>
+            <h1>
+              <T translationKey="title"></T>
+            </h1>
           </a>
         </Link>
         <Navbar page={page} />

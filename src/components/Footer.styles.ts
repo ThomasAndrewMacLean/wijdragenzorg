@@ -1,11 +1,30 @@
 import styled from 'styled-components';
 
 export const FooterWrapper = styled.footer`
+  .title {
+    font-weight: 400;
+    /* color: white;
+    text-shadow: 3px 3px 10px var(--colour-black); */
+  }
+
+  .left {
+    font-weight: 200;
+    width: 50%;
+  }
+
+  .right {
+    font-weight: 200;
+
+    a {
+      text-align: right;
+    }
+  }
   .footerWrap {
     max-width: 900px;
     margin: auto;
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
     padding: 4rem 0;
   }
 
@@ -23,5 +42,8 @@ export const FooterWrapper = styled.footer`
   a {
     text-decoration: none;
     color: inherit;
+    display: block;
+
+    margin-bottom: 0.4rem;
   }
 `;

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import * as Styles from './Footer.styles';
 import { SEOContext } from '../utils/contexts';
+import { T } from './';
 
 type PropsType = {};
 const Footer = ({}: PropsType) => {
@@ -17,15 +18,33 @@ const Footer = ({}: PropsType) => {
   return (
     <Styles.FooterWrapper className="fullwidth">
       <div className="footerWrap">
-        <a href={facebookLink} target="blank" rel="noopener noreferrer">
-          facebook
-        </a>
-        <a href={instagramLink} target="blank" rel="noopener noreferrer">
-          instagram
-        </a>
-        <a href={'mailto:' + emailAdres} target="blank">
-          email
-        </a>
+        <div className="left">
+          <div className="title">
+            <T translationKey="title"></T>
+          </div>
+
+          <T translationKey="contactAdres"></T>
+          <br />
+          <T translationKey="contactTelefoon"></T>
+          <br />
+          <T translationKey="contactBTW"></T>
+          <br />
+          <a href={'mailto:' + emailAdres} target="blank">
+            <T translationKey="contactEmail"></T>
+          </a>
+        </div>
+        <div className="middle"></div>
+        <div className="right">
+          <a href={facebookLink} target="blank" rel="noopener noreferrer">
+            facebook
+          </a>
+
+          <a href={instagramLink} target="blank" rel="noopener noreferrer">
+            instagram
+          </a>
+
+      
+        </div>
       </div>
     </Styles.FooterWrapper>
   );
