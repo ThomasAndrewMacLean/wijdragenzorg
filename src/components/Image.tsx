@@ -18,6 +18,7 @@ const Image = ({
       style={style && { ...style }}
       src={getImageUrl(pics, imageKey, true)}
       className={className}
+      alt={imageKey}
     ></img>
   );
 };

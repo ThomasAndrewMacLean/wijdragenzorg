@@ -26,10 +26,10 @@ const Social = ({}: PropsType) => {
           <T translationKey="socialOmschrijving"></T>
 
           <a href={facebookLink} target="_blank" rel="noopener noreferrer">
-            <Image className="logo" imageKey="facebookLogo"></Image>
+            <Image className="logo" imageKey="facebookLogo"></Image> Facebook
           </a>
           <a href={instagramLink} target="_blank" rel="noopener noreferrer">
-            <Image className="logo" imageKey="instagramLogo"></Image>{' '}
+            <Image className="logo" imageKey="instagramLogo"></Image> Instagram
           </a>
         </div>
       </div>

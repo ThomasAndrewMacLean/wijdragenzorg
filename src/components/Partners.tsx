@@ -56,11 +56,11 @@ const Partners = ({ partners }: PropsType) => {
       </ul>
 
       <div className="arrowWrap">
-        <button onClick={slideLeft}>
+        <button aria-label="vorige" onClick={slideLeft}>
           <Image imageKey="arrowLeft"></Image>
         </button>
         <button onClick={slideRight}>
-          <Image imageKey="arrowRight"></Image>
+          <Image aria-label="volgende" imageKey="arrowRight"></Image>
         </button>
       </div>
     </Styles.PartnersWrapper>
