@@ -1,6 +1,7 @@
 import React from 'react';
 import * as Styles from './HomeWelcome.styles';
 import { Image, T } from '.';
+import Link from 'next/link';
 
 type PropsType = {};
 const HomeWelcom = ({}: PropsType) => {
@@ -10,7 +11,11 @@ const HomeWelcom = ({}: PropsType) => {
         <T translationKey="welcomeText"></T>
 
         <button className="btn btn-primary">
-          <T translationKey="cta"></T>
+          <Link href="/contact">
+            <a>
+              <T translationKey="cta"></T>
+            </a>
+          </Link>
         </button>
       </div>
 

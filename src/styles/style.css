@@ -69,6 +69,11 @@ p {
   transition: all 300ms ease;
 }
 
+.btn a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .btn:hover {
   transform: scale(1.1);
 }
