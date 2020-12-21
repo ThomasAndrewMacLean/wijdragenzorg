@@ -1,21 +1,32 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useContext } from 'react';
 import Link from 'next/link';
 
 import { T, Image } from '.';
 import { prefix } from '../utils';
 import { pages } from '../constants/pages';
 import * as Styles from './Layout.styles';
+import { SEOContext } from '../utils/contexts';
 
 type LayoutProps = {
   children: ReactNode;
   page: string;
 };
 const Layout = ({ children, page }: LayoutProps) => {
+  const seoFromContext = useContext(SEOContext) || [];
+
+  const facebookLink =
+    seoFromContext.find((x) => x.id === 'facebookLink')?.text || '';
+
+  const instagramLink =
+    seoFromContext.find((x) => x.id === 'instagramLink')?.text || '';
+  const emailAdres =
+    seoFromContext.find((x) => x.id === 'emailAdres')?.text || '';
+
   return (
     <Styles.Main>
       <Styles.Header>
         <div className="headerWrap">
-          <Link href="/">
+          <Link href={prefix + '/'}>
             <a>
               <T translationKey="title"></T>
             </a>
@@ -46,13 +57,13 @@ const Layout = ({ children, page }: LayoutProps) => {
       <div className="pageWrap">{children}</div>
       <Styles.Footer className="fullwidth">
         <div className="footerWrap">
-          <a href="https://www.facebook.com" target="blank">
+          <a href={facebookLink} target="blank" rel="noopener noreferrer">
             facebook
           </a>
-          <a href="https://www.instagram.com" target="blank">
+          <a href={instagramLink} target="blank" rel="noopener noreferrer">
             instagram
           </a>
-          <a href="mailto:verpleging@wijdragenzorg.be" target="blank">
+          <a href={'mailto:' + emailAdres} target="blank">
             email
           </a>
         </div>

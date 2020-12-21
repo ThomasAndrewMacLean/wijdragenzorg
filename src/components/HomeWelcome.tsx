@@ -2,6 +2,7 @@ import React from 'react';
 import * as Styles from './HomeWelcome.styles';
 import { Image, T } from '.';
 import Link from 'next/link';
+import { prefix } from '../utils';
 
 type PropsType = {};
 const HomeWelcom = ({}: PropsType) => {
@@ -11,7 +12,7 @@ const HomeWelcom = ({}: PropsType) => {
         <T translationKey="welcomeText"></T>
 
         <button className="btn btn-primary">
-          <Link href="/contact">
+          <Link href={prefix + '/contact'}>
             <a>
               <T translationKey="cta"></T>
             </a>
