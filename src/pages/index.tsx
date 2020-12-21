@@ -44,8 +44,8 @@ const IndexPage = ({
               <Main>
                 <SEO seo={seo}></SEO>
                 <HomeWelcome></HomeWelcome>
-                <Partners partners={partners}></Partners>
                 <About></About>
+                <Partners partners={partners}></Partners>
                 <Quote quoteId="textQuote1"></Quote>
                 <Contact></Contact>
                 <Social></Social>
