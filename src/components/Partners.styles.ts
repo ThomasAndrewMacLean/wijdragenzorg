@@ -10,6 +10,14 @@ export const PartnersWrapper = styled.section`
     flex: 1;
     display: flex;
 
+    /* Hide scrollbar */
+    &::-webkit-scrollbar {
+      display: none; /* Chrome */
+    }
+    overflow: -moz-scrollbars-none; /* Firefox */
+    scrollbar-width: none; /* Firefox 64 */
+    -ms-overflow-style: none; /* IE */
+
     .wrap {
       min-width: 400px;
       box-shadow: 10px 10px 20px -5px #00000042;
@@ -23,6 +31,7 @@ export const PartnersWrapper = styled.section`
       }
       .textWrap {
         padding: 1rem;
+        padding-bottom: 2rem;
         width: 60%;
 
         h4 {
@@ -34,8 +43,24 @@ export const PartnersWrapper = styled.section`
         }
       }
     }
-    .wrap:last-child {
-      padding-right: 3rem;
+  }
+
+  .arrowWrap {
+    button {
+      height: 35px;
+      width: 35px;
+      border: none;
+      background: none;
+      margin-right: 2rem;
+      outline: none;
+      transition: all 300ms ease;
+      &:hover,
+      &:focus {
+        transform: scale(1.1);
+      }
+      img {
+        opacity: 0.7;
+      }
     }
   }
 `;
