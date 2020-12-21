@@ -12,7 +12,7 @@ const HomeWelcom = ({}: PropsType) => {
         <T translationKey="welcomeText"></T>
 
         <button className="btn btn-primary">
-          <Link href={prefix + '/contact'}>
+          <Link href={prefix + 'contact'}>
             <a>
               <T translationKey="cta"></T>
             </a>
