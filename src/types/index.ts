@@ -3,12 +3,12 @@ export type TranslationsType = {
   NL?: string;
   'NL zonder opmaak'?: string;
 };
-type ImageType ={
+type ImageType = {
   url: string;
   thumbnails: {
-    large:  {url:string};
+    large: { url: string };
   };
-}
+};
 export type ImagesType = {
   id: string;
   pic: ImageType[];
@@ -17,25 +17,28 @@ export type ImagesType = {
 export type FaqsType = {
   Vraag: string;
   Antwoord: string;
-
-}
+};
 export type SEOType = {
   id: string;
   text?: string;
   pic: ImageType[];
 };
 
-export type TeamLidType ={
+export type TeamLidType = {
   Naam: string;
   Telefoon: string;
   Omschrijving: string;
   Foto: ImageType[];
+};
 
-}
-
-export type DienstType ={
+export type DienstType = {
   Naam: string;
   Omschrijving: string;
-  Foto:ImageType[];
+  Foto: ImageType[];
+};
 
-}
+export type PartnerType = {
+  Naam: string;
+  Omschrijving: string;
+  Foto: ImageType[];
+};

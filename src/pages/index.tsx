@@ -10,6 +10,7 @@ import {
   About,
   Contact,
   Quote,
+  Partners,
   Social,
 } from '../components';
 import {
@@ -19,9 +20,21 @@ import {
   SEOContext,
 } from '../utils/contexts';
 import { getDataFromAirtable } from '../utils';
-import { TranslationsType, ImagesType, SEOType, FaqsType } from '../types';
+import {
+  TranslationsType,
+  ImagesType,
+  SEOType,
+  FaqsType,
+  PartnerType,
+} from '../types';
 
-const IndexPage = ({ translations, pics, seo, faqs }: IndexPageProps) => {
+const IndexPage = ({
+  translations,
+  pics,
+  seo,
+  faqs,
+  partners,
+}: IndexPageProps) => {
   return (
     <PictureContext.Provider value={pics}>
       <SEOContext.Provider value={seo}>
@@ -31,6 +44,7 @@ const IndexPage = ({ translations, pics, seo, faqs }: IndexPageProps) => {
               <Main>
                 <SEO seo={seo}></SEO>
                 <HomeWelcome></HomeWelcome>
+                <Partners partners={partners}></Partners>
                 <About></About>
                 <Quote quoteId="textQuote1"></Quote>
                 <Contact></Contact>
@@ -55,6 +69,7 @@ export const getStaticProps = async () => {
       pics: data.pics.filter((x) => x.id),
       seo: data.seo.filter((x) => x.id),
       faqs: data.Faqs.filter((x) => x.Vraag),
+      partners: data.Partners.filter((x) => x.Naam),
     },
   };
 };
@@ -64,6 +79,7 @@ type IndexPageProps = {
   pics: ImagesType[];
   seo: SEOType[];
   faqs: FaqsType[];
+  partners: PartnerType[];
 };
 
 export default IndexPage;
