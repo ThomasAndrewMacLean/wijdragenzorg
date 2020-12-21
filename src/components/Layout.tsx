@@ -26,7 +26,7 @@ const Layout = ({ children, page }: LayoutProps) => {
     <Styles.Main>
       <Styles.Header>
         <div className="headerWrap">
-          <Link href={prefix + '/'}>
+          <Link href={prefix || ''}>
             <a>
               <T translationKey="title"></T>
             </a>

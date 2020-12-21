@@ -11,6 +11,7 @@ import {
   Contact,
   Map,
   Quote,
+  Social,
 } from '../components';
 
 import {
@@ -33,6 +34,7 @@ const RegiosPage = ({ translations, pics, seo, faqs }: RegiosPageProps) => {
               <Quote quoteId="textQuote1"></Quote>
               <About></About>
               <Contact></Contact>
+              <Social></Social>
               <Faq faqs={faqs}></Faq>
             </Main>
           </Layout>
