@@ -34,8 +34,9 @@ export const PartnersWrapper = styled.section`
         padding-bottom: 2rem;
         width: 60%;
 
-        h4 {
+        h3 {
           margin-bottom: 1rem;
+          font-size: 1rem;
         }
 
         .text {

@@ -41,7 +41,7 @@ const Partners = ({ partners }: PropsType) => {
               >
                 <img src={partner.Foto?.[0]?.thumbnails.large.url} alt="" />
                 <div className="textWrap">
-                  <h4>{partner.Naam}</h4>
+                  <h3>{partner.Naam}</h3>
                   <div
                     className="text"
                     dangerouslySetInnerHTML={{
