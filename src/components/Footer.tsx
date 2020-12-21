@@ -3,6 +3,7 @@ import * as Styles from './Footer.styles';
 import { SEOContext } from '../utils/contexts';
 import { T } from './';
 
+
 type PropsType = {};
 const Footer = ({}: PropsType) => {
   const seoFromContext = useContext(SEOContext) || [];
