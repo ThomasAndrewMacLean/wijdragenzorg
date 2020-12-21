@@ -4,5 +4,5 @@ export const pages: { id: string; url: string; showInNav: boolean }[] = [
   { id: 'diensten', url: 'diensten', showInNav: true },
   { id: 'team', url: 'team', showInNav: true },
   { id: 'regios', url: 'regios', showInNav: true },
-  { id: 'contact', url: 'contact', showInNav: false },
+  { id: 'contact', url: 'contact', showInNav: true },
 ];

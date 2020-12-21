@@ -107,6 +107,10 @@ export const Footer = styled.footer`
     padding: 4rem 0;
   }
 
+  @media only screen and (max-width: 660px) {
+    // NAVBAR IS AT THE BOTTOM
+    padding-bottom: 96px;
+  }
   background: var(--background-secondary-lighter);
 
   @media only screen and (max-width: 1000px) {
@@ -129,11 +133,42 @@ export const Navbar = styled.nav`
     background: white;
     display: flex;
     justify-content: center;
-    padding-top: 1.1rem;
+    padding-top: 0.1rem;
     padding-bottom: 0.5rem;
     box-shadow: 0px 9px 20px 0px #0000005c;
     ul {
+      padding-top: 1rem;
       margin-left: 0;
+      overflow: scroll;
+
+      li:last-child {
+        // padding-right: 1rem;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 425px) {
+    ul {
+      li {
+        margin: 0 0.7rem !important;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 360px) {
+    ul {
+      li {
+        margin: 0 0.5rem !important;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 314px) {
+    ul {
+      // ADD PADDING SO SCROLL IS NICER
+      li:last-child {
+        padding-right: 1rem;
+      }
     }
   }
 `;
