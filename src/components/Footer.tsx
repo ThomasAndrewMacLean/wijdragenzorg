@@ -23,15 +23,21 @@ const Footer = ({}: PropsType) => {
             <T translationKey="title"></T>
           </div>
 
-          <T translationKey="contactAdres"></T>
-          <br />
-          <T translationKey="contactTelefoon"></T>
-          <br />
-          <T translationKey="contactBTW"></T>
-          <br />
-          <a href={'mailto:' + emailAdres} target="blank">
-            <T translationKey="contactEmail"></T>
-          </a>
+          <div className="spacer">
+            <T translationKey="contactAdres"></T>
+          </div>
+          <br/>
+          <div className="spacer">
+            <T translationKey="contactTelefoon"></T>
+          </div>
+          <div className="spacer">
+            <T translationKey="contactBTW"></T>
+          </div>
+          <div className="spacer">
+            <a href={'mailto:' + emailAdres} target="blank">
+              <T translationKey="contactEmail"></T>
+            </a>
+          </div>
         </div>
         <div className="middle"></div>
         <div className="right">
@@ -42,8 +48,6 @@ const Footer = ({}: PropsType) => {
           <a href={instagramLink} target="blank" rel="noopener noreferrer">
             instagram
           </a>
-
-      
         </div>
       </div>
     </Styles.FooterWrapper>

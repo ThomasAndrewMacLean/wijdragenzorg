@@ -6,7 +6,9 @@ export const FooterWrapper = styled.footer`
     /* color: white;
     text-shadow: 3px 3px 10px var(--colour-black); */
   }
-
+  .spacer {
+    margin-bottom: 0.4rem;
+  }
   .left {
     font-weight: 200;
     width: 50%;
