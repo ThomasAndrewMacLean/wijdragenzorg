@@ -6,7 +6,7 @@ import { DienstenContext } from '../utils/contexts';
 type PropsType = {};
 const DienstenLijst = ({}: PropsType) => {
   const diensten = useContext(DienstenContext) || [];
-  const [showMore, setShowMore] = useState(diensten.map((x) => false));
+  const [showMore, setShowMore] = useState(diensten.map(() => false));
 
   const showMoreClick = (index: number) => {
     const copy = showMore;
