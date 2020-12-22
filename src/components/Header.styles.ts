@@ -17,7 +17,7 @@ export const HeaderWrapper = styled.header`
     }
     h1 {
       font-weight: 100;
-      font-family: Homemade Apple;
+      font-family: 'La Belle Aurore', cursive;
       em {
         color: var(--background-dark);
       }

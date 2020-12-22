@@ -1,13 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400;800&display=swap');
-@font-face {
-  font-family: 'Homemade Apple';
-  src: url('../../public/HomemadeApple-Regular.woff2') format('woff2'),
-    url('../../public/HomemadeApple-Regular.woff') format('woff'),
-    url('../../public/HomemadeApple-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400;800&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;700&display=swap');
 :root {
   --background-dark: #f0ad36;
@@ -84,7 +76,7 @@ p {
 }
 
 em {
-  /* font-family: Homemade Apple; */
+  /* font-family: 'La Belle Aurore', cursive; */
 }
 
 h2 {

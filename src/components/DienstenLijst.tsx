@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { convertToHtml } from '../utils';
 import * as Styles from './DienstenLijst.styles';
 import { DienstenContext } from '../utils/contexts';
@@ -6,6 +6,14 @@ import { DienstenContext } from '../utils/contexts';
 type PropsType = {};
 const DienstenLijst = ({}: PropsType) => {
   const diensten = useContext(DienstenContext) || [];
+  const [showMore, setShowMore] = useState(diensten.map((x) => false));
+
+  const showMoreClick = (index: number) => {
+    const copy = showMore;
+    copy[index] = !copy[index];
+    console.log(copy);
+    setShowMore([...copy]);
+  };
 
   return (
     <Styles.DienstenLijstWrapper>
@@ -14,7 +22,7 @@ const DienstenLijst = ({}: PropsType) => {
           return (
             <Styles.Dienst even={index % 2 === 0} key={index}>
               <img src={dienst.Foto?.[0]?.thumbnails?.large?.url} alt="" />
-              <div className="text">
+              <div className={showMore[index] ? 'text showAll' : 'text'}>
                 <h3 id={dienst.Naam.trim()}>{dienst.Naam}</h3>
                 <div
                   className="omschrijving"
@@ -23,6 +31,9 @@ const DienstenLijst = ({}: PropsType) => {
                   }}
                 ></div>
               </div>
+              {!showMore[index] && (
+                <button onClick={() => showMoreClick(index)}>Toon meer</button>
+              )}
             </Styles.Dienst>
           );
         })}

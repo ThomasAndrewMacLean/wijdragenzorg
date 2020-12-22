@@ -49,5 +49,14 @@ export const Dienst = styled.li<{ even: boolean }>`
     h3 {
       margin-bottom: 1.5rem;
     }
+
+    height: 300px;
+    overflow:hidden;
+   
+    &.showAll{
+        
+        height: auto;
+        overflow: inherit
+      }
   }
 `;
