@@ -1,16 +1,14 @@
-import React from 'react';
-import { DienstType } from '../types';
+import React, { useContext } from 'react';
 import { convertToHtml } from '../utils';
 import * as Styles from './DienstenLijst.styles';
+import { DienstenContext } from '../utils/contexts';
 
-type PropsType = {
-  diensten: DienstType[];
-};
-const DienstenLijst = ({ diensten }: PropsType) => {
+type PropsType = {};
+const DienstenLijst = ({}: PropsType) => {
+  const diensten = useContext(DienstenContext) || [];
+
   return (
     <Styles.DienstenLijstWrapper>
-     
-
       <ul>
         {diensten.map((dienst, index) => {
           return (

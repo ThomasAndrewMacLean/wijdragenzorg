@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { TranslationsType, ImagesType, SEOType, FaqsType } from '../types';
 
-import { Layout, SEO, About, Contact, Social, Faq, Quote } from '../components';
+import { Layout, SEO } from '../components';
 
 import {
   TranslationContext,
@@ -11,21 +11,29 @@ import {
   FaqContext,
 } from '../utils/contexts';
 import { getDataFromAirtable } from '../utils';
+import { pageNames } from '../constants';
+//@ts-ignore
+import { componentMap } from '../constants/components.tsx';
 
 const ContactPage = ({ translations, pics, seo, faqs }: ContactPageProps) => {
+  const page = pageNames.contact;
+  const pageComponents = ['contact', 'social', 'about', 'quote', 'faq'];
   return (
     <PictureContext.Provider value={pics}>
       <SEOContext.Provider value={seo}>
         <TranslationContext.Provider value={translations}>
           <FaqContext.Provider value={faqs}>
-            <Layout page="contact">
+            <Layout page={page}>
               <Main>
                 <SEO></SEO>
-                <Contact></Contact>
-                <Social></Social>
-                <About></About>
-                <Quote quoteId="textQuote2"></Quote>
-                <Faq></Faq>
+                {pageComponents.map((comp, index) => {
+                  const component = componentMap[comp];
+                  if (component) {
+                    return (
+                      <component.type page={page} key={index}></component.type>
+                    );
+                  }
+                })}
               </Main>
             </Layout>
           </FaqContext.Provider>

@@ -18,7 +18,7 @@ const PrivacyPage = ({ translations, pics, seo }: PrivacyPageProps) => {
         <TranslationContext.Provider value={translations}>
           <Layout page="privacy">
             <Main>
-              <SEO seo={seo}></SEO>
+              <SEO></SEO>
               <h1>Privacy</h1>
             </Main>
           </Layout>
@@ -48,4 +48,3 @@ type PrivacyPageProps = {
   seo: SEOType[];
 };
 export default PrivacyPage;
-

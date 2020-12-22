@@ -1,12 +1,11 @@
-import React from 'react';
-import { TeamLidType } from '../types';
+import React, { useContext } from 'react';
 import * as Styles from './Teamleden.styles';
 import { Image, T } from './';
 import { convertToHtml } from '../utils';
-type PropsType = {
-  teamleden: TeamLidType[];
-};
-const Teamleden = ({ teamleden }: PropsType) => {
+import { TeamledenContext } from '../utils/contexts';
+type PropsType = {};
+const Teamleden = ({}: PropsType) => {
+  const teamleden = useContext(TeamledenContext) || [];
   return (
     <Styles.TeamledenWrapper>
       <h2>
@@ -26,7 +25,8 @@ const Teamleden = ({ teamleden }: PropsType) => {
               <div className="textWrap">
                 <h4>{teamlid.Naam}</h4>
 
-                <div className="omschrijvingText"
+                <div
+                  className="omschrijvingText"
                   dangerouslySetInnerHTML={{
                     __html: convertToHtml(teamlid.Omschrijving),
                   }}

@@ -2,17 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { TranslationsType, ImagesType, SEOType, FaqsType } from '../types';
 
-import {
-  Layout,
-  SEO,
-  RegioHeader,
-  About,
-  Faq,
-  Contact,
-  Map,
-  Quote,
-  Social,
-} from '../components';
+import { Layout, SEO } from '../components';
 
 import {
   TranslationContext,
@@ -21,23 +11,37 @@ import {
   FaqContext,
 } from '../utils/contexts';
 import { getDataFromAirtable } from '../utils';
-
+import { pageNames } from '../constants';
+//@ts-ignore
+import { componentMap } from '../constants/components.tsx';
 const RegiosPage = ({ translations, pics, seo, faqs }: RegiosPageProps) => {
+  const page = pageNames.regios;
+  const pageComponents = [
+    'regioHeader',
+    'map',
+    'quote',
+    'about',
+    'contact',
+    'social',
+    'faq',
+  ];
+
   return (
     <PictureContext.Provider value={pics}>
       <SEOContext.Provider value={seo}>
         <TranslationContext.Provider value={translations}>
           <FaqContext.Provider value={faqs}>
-            <Layout page="regios">
+            <Layout page={page}>
               <Main>
                 <SEO></SEO>
-                <RegioHeader />
-                <Map></Map>
-                <Quote quoteId="textQuote1"></Quote>
-                <About></About>
-                <Contact></Contact>
-                <Social></Social>
-                <Faq></Faq>
+                {pageComponents.map((comp, index) => {
+                  const component = componentMap[comp];
+                  if (component) {
+                    return (
+                      <component.type page={page} key={index}></component.type>
+                    );
+                  }
+                })}
               </Main>
             </Layout>
           </FaqContext.Provider>

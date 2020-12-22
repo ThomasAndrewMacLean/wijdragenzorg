@@ -8,23 +8,19 @@ import {
   FaqsType,
 } from '../types';
 
-import {
-  Layout,
-  SEO,
-  DienstenHeader,
-  DienstenLijst,
-  Quote,
-  Contact,
-  Faq,
-} from '../components';
+import { Layout, SEO } from '../components';
 
 import {
   TranslationContext,
   PictureContext,
   SEOContext,
   FaqContext,
+  DienstenContext,
 } from '../utils/contexts';
 import { getDataFromAirtable } from '../utils';
+import { pageNames } from '../constants';
+//@ts-ignore
+import { componentMap } from '../constants/components.tsx';
 
 const DienstenPage = ({
   translations,
@@ -33,21 +29,39 @@ const DienstenPage = ({
   diensten,
   faqs,
 }: DienstenPageProps) => {
+  const page = pageNames.diensten;
+  const pageComponents = [
+    'dienstenHeader',
+    'dienstenLijst',
+    'quote',
+    'contact',
+    'social',
+    'faq',
+  ];
+
   return (
     <PictureContext.Provider value={pics}>
       <SEOContext.Provider value={seo}>
         <TranslationContext.Provider value={translations}>
           <FaqContext.Provider value={faqs}>
-            <Layout page="diensten">
-              <Main>
-                <SEO></SEO>
-                <DienstenHeader diensten={diensten} />
-                <DienstenLijst diensten={diensten} />
-                <Quote quoteId="textQuote3"></Quote>
-                <Contact></Contact>
-                <Faq></Faq>
-              </Main>
-            </Layout>
+            <DienstenContext.Provider value={diensten}>
+              <Layout page={page}>
+                <Main>
+                  <SEO></SEO>
+                  {pageComponents.map((comp, index) => {
+                    const component = componentMap[comp];
+                    if (component) {
+                      return (
+                        <component.type
+                          page={page}
+                          key={index}
+                        ></component.type>
+                      );
+                    }
+                  })}
+                </Main>
+              </Layout>
+            </DienstenContext.Provider>
           </FaqContext.Provider>
         </TranslationContext.Provider>
       </SEOContext.Provider>

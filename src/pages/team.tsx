@@ -8,15 +8,7 @@ import {
   FaqsType,
 } from '../types';
 
-import {
-  Layout,
-  SEO,
-  Teamleden,
-  Faq,
-  Contact,
-  About,
-  Quote,
-} from '../components';
+import { Layout, SEO } from '../components';
 
 import {
   TranslationContext,
@@ -26,6 +18,9 @@ import {
   FaqContext,
 } from '../utils/contexts';
 import { getDataFromAirtable } from '../utils';
+import { pageNames } from '../constants';
+//@ts-ignore
+import { componentMap } from '../constants/components.tsx';
 
 const TeamPage = ({
   translations,
@@ -34,21 +29,28 @@ const TeamPage = ({
   teamleden,
   faqs,
 }: TeamPageProps) => {
+  const page = pageNames.team;
+  const pageComponents = ['teamleden', 'quote', 'contact', 'faq', 'about'];
   return (
     <PictureContext.Provider value={pics}>
       <SEOContext.Provider value={seo}>
         <TranslationContext.Provider value={translations}>
           <TeamledenContext.Provider value={teamleden}>
             <FaqContext.Provider value={faqs}>
-              <Layout page="team">
+              <Layout page={page}>
                 <Main>
                   <SEO></SEO>
-                  <Teamleden teamleden={teamleden} />
-                  <Quote quoteId="textQuote2"></Quote>
-
-                  <Contact></Contact>
-                  <Faq></Faq>
-                  <About></About>
+                  {pageComponents.map((comp, index) => {
+                    const component = componentMap[comp];
+                    if (component) {
+                      return (
+                        <component.type
+                          page={page}
+                          key={index}
+                        ></component.type>
+                      );
+                    }
+                  })}
                 </Main>
               </Layout>
             </FaqContext.Provider>

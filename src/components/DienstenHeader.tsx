@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import * as Styles from './DienstenHeader.styles';
 import { T } from '.';
-import { DienstType } from '../types';
-type PropsType = { diensten: DienstType[] };
-const DienstenHeader = ({ diensten }: PropsType) => {
+import { DienstenContext } from '../utils/contexts';
+type PropsType = {};
+const DienstenHeader = ({}: PropsType) => {
+  const diensten = useContext(DienstenContext) || [];
+
   return (
     <Styles.DienstenHeaderWrapper>
       <h2>

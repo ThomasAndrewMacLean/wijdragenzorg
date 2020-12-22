@@ -4,13 +4,6 @@ import styled from 'styled-components';
 import {
   Layout,
   SEO,
-  Faq,
-  HomeWelcome,
-  About,
-  Contact,
-  Quote,
-  Partners,
-  Social,
 } from '../components';
 import {
   TranslationContext,
@@ -27,7 +20,8 @@ import {
   FaqsType,
   PartnerType,
 } from '../types';
-
+// @ts-ignore
+import { componentMap } from '../constants/components.tsx';
 const IndexPage = ({
   translations,
   pics,
@@ -35,22 +29,36 @@ const IndexPage = ({
   faqs,
   partners,
 }: IndexPageProps) => {
+  const page = 'home';
+  const pageComponents = [
+    'homeWelcome',
+    'about',
+    'partners',
+    'quote',
+    'contact',
+    'social',
+    'faq',
+  ];
   return (
     <PictureContext.Provider value={pics}>
       <SEOContext.Provider value={seo}>
         <TranslationContext.Provider value={translations}>
           <FaqContext.Provider value={faqs}>
             <ParnterContext.Provider value={partners}>
-              <Layout page="home">
+              <Layout page={page}>
                 <Main>
                   <SEO></SEO>
-                  <HomeWelcome></HomeWelcome>
-                  <About></About>
-                  <Partners></Partners>
-                  <Quote quoteId="textQuote1"></Quote>
-                  <Contact></Contact>
-                  <Social></Social>
-                  <Faq></Faq>
+                  {pageComponents.map((comp, index) => {
+                    const component = componentMap[comp];
+                    if (component) {
+                      return (
+                        <component.type
+                          page={page}
+                          key={index}
+                        ></component.type>
+                      );
+                    }
+                  })}
                 </Main>
               </Layout>
             </ParnterContext.Provider>
