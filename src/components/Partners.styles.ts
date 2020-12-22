@@ -54,6 +54,7 @@ export const PartnersWrapper = styled.section`
       background: none;
       margin-right: 2rem;
       outline: none;
+      cursor: pointer;
       transition: all 300ms ease;
       &:hover,
       &:focus {
