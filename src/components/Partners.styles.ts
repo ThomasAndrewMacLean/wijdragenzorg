@@ -3,7 +3,12 @@ import styled from 'styled-components';
 export const PartnersWrapper = styled.section`
   ul {
     padding: 2rem;
-    margin-left: -2rem;
+    padding-left: calc(50vw - 450px);
+    @media only screen and (max-width: 1000px) {
+      padding-left: 5vw;
+    }
+
+    margin-left: 0rem;
     gap: 3rem;
     overflow: scroll;
     list-style: none;
@@ -47,6 +52,8 @@ export const PartnersWrapper = styled.section`
   }
 
   .arrowWrap {
+    padding: 0 !important;
+
     button {
       height: 35px;
       width: 35px;

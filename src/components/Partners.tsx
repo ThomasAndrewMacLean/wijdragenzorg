@@ -1,5 +1,5 @@
 import React, { useRef, useContext } from 'react';
-import { Image } from '.';
+import { Image, T } from '.';
 import { convertToHtml } from '../utils';
 import { ParnterContext } from '../utils/contexts';
 import * as Styles from './Partners.styles';
@@ -30,7 +30,10 @@ const Partners = ({}: PropsType) => {
     });
   };
   return (
-    <Styles.PartnersWrapper>
+    <Styles.PartnersWrapper className="fullwidth">
+      <h2 className="content arrowWrap">
+        <T translationKey="partnersTitel"></T>
+      </h2>
       <ul ref={sliderRef}>
         {(partners || []).map((partner, index) => {
           return (
@@ -57,7 +60,7 @@ const Partners = ({}: PropsType) => {
         })}
       </ul>
 
-      <div className="arrowWrap">
+      <div className="content arrowWrap">
         <button aria-label="vorige" onClick={slideLeft}>
           <Image imageKey="arrowLeft"></Image>
         </button>
