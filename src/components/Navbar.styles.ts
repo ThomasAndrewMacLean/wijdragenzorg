@@ -75,6 +75,14 @@ export const NavbarWrapper = styled.nav`
     }
   }
 
+  @media only screen and (max-width: 390px) {
+    ul {
+      li {
+        margin: 0 0.6rem !important;
+      }
+    }
+  }
+
   @media only screen and (max-width: 360px) {
     ul {
       li {
