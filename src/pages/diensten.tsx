@@ -6,6 +6,7 @@ import {
   SEOType,
   DienstType,
   FaqsType,
+  ComponentNameType,
 } from '../types';
 
 import { Layout, SEO } from '../components';
@@ -30,7 +31,7 @@ const DienstenPage = ({
   faqs,
 }: DienstenPageProps) => {
   const page = pageNames.diensten;
-  const pageComponents = [
+  const pageComponents: ComponentNameType[] = [
     'dienstenHeader',
     'dienstenLijst',
     'quote',

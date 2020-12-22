@@ -1,6 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { TranslationsType, ImagesType, SEOType, FaqsType } from '../types';
+import {
+  TranslationsType,
+  ImagesType,
+  SEOType,
+  FaqsType,
+  ComponentNameType,
+} from '../types';
 
 import { Layout, SEO } from '../components';
 
@@ -17,7 +23,13 @@ import { componentMap } from '../constants/components.tsx';
 
 const ContactPage = ({ translations, pics, seo, faqs }: ContactPageProps) => {
   const page = pageNames.contact;
-  const pageComponents = ['contact', 'social', 'about', 'quote', 'faq'];
+  const pageComponents: ComponentNameType[] = [
+    'contact',
+    'social',
+    'about',
+    'quote',
+    'faq',
+  ];
   return (
     <PictureContext.Provider value={pics}>
       <SEOContext.Provider value={seo}>

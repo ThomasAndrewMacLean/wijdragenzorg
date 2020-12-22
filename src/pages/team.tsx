@@ -6,6 +6,7 @@ import {
   SEOType,
   TeamLidType,
   FaqsType,
+  ComponentNameType,
 } from '../types';
 
 import { Layout, SEO } from '../components';
@@ -30,7 +31,13 @@ const TeamPage = ({
   faqs,
 }: TeamPageProps) => {
   const page = pageNames.team;
-  const pageComponents = ['teamleden', 'quote', 'contact', 'faq', 'about'];
+  const pageComponents: ComponentNameType[] = [
+    'teamleden',
+    'quote',
+    'contact',
+    'faq',
+    'about',
+  ];
   return (
     <PictureContext.Provider value={pics}>
       <SEOContext.Provider value={seo}>

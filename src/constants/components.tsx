@@ -14,7 +14,9 @@ import {
   Map,
   Teamleden,
 } from '../components';
-export const componentMap = {
+import { ComponentNameType } from '../types';
+
+export const componentMap: { [component in ComponentNameType]: JSX.Element } = {
   homeWelcome: <HomeWelcome></HomeWelcome>,
   about: <About></About>,
   partners: <Partners></Partners>,

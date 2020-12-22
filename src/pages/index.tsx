@@ -1,10 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {
-  Layout,
-  SEO,
-} from '../components';
+import { Layout, SEO } from '../components';
 import {
   TranslationContext,
   PictureContext,
@@ -19,6 +16,7 @@ import {
   SEOType,
   FaqsType,
   PartnerType,
+  ComponentNameType,
 } from '../types';
 // @ts-ignore
 import { componentMap } from '../constants/components.tsx';
@@ -30,7 +28,7 @@ const IndexPage = ({
   partners,
 }: IndexPageProps) => {
   const page = 'home';
-  const pageComponents = [
+  const pageComponents: ComponentNameType[] = [
     'homeWelcome',
     'about',
     'partners',

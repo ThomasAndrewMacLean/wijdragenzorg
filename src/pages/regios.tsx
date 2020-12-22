@@ -1,6 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { TranslationsType, ImagesType, SEOType, FaqsType } from '../types';
+import {
+  TranslationsType,
+  ImagesType,
+  SEOType,
+  FaqsType,
+  ComponentNameType,
+} from '../types';
 
 import { Layout, SEO } from '../components';
 
@@ -16,7 +22,7 @@ import { pageNames } from '../constants';
 import { componentMap } from '../constants/components.tsx';
 const RegiosPage = ({ translations, pics, seo, faqs }: RegiosPageProps) => {
   const page = pageNames.regios;
-  const pageComponents = [
+  const pageComponents: ComponentNameType[] = [
     'regioHeader',
     'map',
     'quote',
