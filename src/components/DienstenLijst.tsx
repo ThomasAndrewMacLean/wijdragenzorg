@@ -9,7 +9,7 @@ const DienstenLijst = ({}: PropsType) => {
 
   return (
     <Styles.DienstenLijstWrapper>
-      <ul>
+      <ul className="noStyle">
         {diensten.map((dienst, index) => {
           return (
             <Styles.Dienst even={index % 2 === 0} key={index}>
