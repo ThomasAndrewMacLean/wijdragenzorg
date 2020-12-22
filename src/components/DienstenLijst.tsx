@@ -30,6 +30,7 @@ const DienstenLijst = ({}: PropsType) => {
                     __html: convertToHtml(dienst.Omschrijving),
                   }}
                 ></div>
+                {!showMore[index] && <div className="blur"></div>}
               </div>
               {!showMore[index] && (
                 <button onClick={() => showMoreClick(index)}>Toon meer</button>

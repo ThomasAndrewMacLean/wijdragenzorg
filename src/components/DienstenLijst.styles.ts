@@ -11,6 +11,15 @@ export const Dienst = styled.li<{ even: boolean }>`
   flex-direction: ${(props) => (props.even ? 'row' : 'row-reverse')};
   */
 
+ button{
+      font-size: inherit;
+    font-family: inherit;
+    border: none;
+    background: none;
+    text-decoration: underline;
+    cursor: pointer;
+    }
+    
  clear: both;
   @media only screen and (max-width: 660px) { 
     flex-direction: column-reverse;
@@ -52,6 +61,15 @@ export const Dienst = styled.li<{ even: boolean }>`
 
     height: 300px;
     overflow:hidden;
+    position: relative;
+    .blur{
+      position:absolute;
+      bottom:0;
+      width:100%;
+      background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+
+      height: 100px;
+    }
    
     &.showAll{
         
