@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Image, T } from '.';
-import { FaqsType } from '../types';
+
 import { convertToHtml } from '../utils';
 import * as Styles from './Faq.styles';
 import { FaqContext } from '../utils/contexts';
