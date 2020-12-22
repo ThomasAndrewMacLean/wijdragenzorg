@@ -18,6 +18,7 @@ import {
   TranslationContext,
   PictureContext,
   SEOContext,
+  FaqContext,
 } from '../utils/contexts';
 import { getDataFromAirtable } from '../utils';
 
@@ -26,18 +27,20 @@ const RegiosPage = ({ translations, pics, seo, faqs }: RegiosPageProps) => {
     <PictureContext.Provider value={pics}>
       <SEOContext.Provider value={seo}>
         <TranslationContext.Provider value={translations}>
-          <Layout page="regios">
-            <Main>
-              <SEO seo={seo}></SEO>
-              <RegioHeader />
-              <Map></Map>
-              <Quote quoteId="textQuote1"></Quote>
-              <About></About>
-              <Contact></Contact>
-              <Social></Social>
-              <Faq faqs={faqs}></Faq>
-            </Main>
-          </Layout>
+          <FaqContext.Provider value={faqs}>
+            <Layout page="regios">
+              <Main>
+                <SEO></SEO>
+                <RegioHeader />
+                <Map></Map>
+                <Quote quoteId="textQuote1"></Quote>
+                <About></About>
+                <Contact></Contact>
+                <Social></Social>
+                <Faq></Faq>
+              </Main>
+            </Layout>
+          </FaqContext.Provider>
         </TranslationContext.Provider>
       </SEOContext.Provider>
     </PictureContext.Provider>

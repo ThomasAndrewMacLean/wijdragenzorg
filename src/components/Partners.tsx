@@ -1,11 +1,13 @@
-import React, { useRef } from 'react';
+import React, { useRef, useContext } from 'react';
 import { Image } from '.';
-import { PartnerType } from '../types';
 import { convertToHtml } from '../utils';
+import { ParnterContext } from '../utils/contexts';
 import * as Styles from './Partners.styles';
 
-type PropsType = { partners: PartnerType[] };
-const Partners = ({ partners }: PropsType) => {
+type PropsType = {};
+const Partners = ({}: PropsType) => {
+  const partners = useContext(ParnterContext) || [];
+
   const sliderRef = useRef(null);
 
   const slideLeft = () => {

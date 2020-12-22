@@ -22,6 +22,7 @@ import {
   TranslationContext,
   PictureContext,
   SEOContext,
+  FaqContext,
 } from '../utils/contexts';
 import { getDataFromAirtable } from '../utils';
 
@@ -36,16 +37,18 @@ const DienstenPage = ({
     <PictureContext.Provider value={pics}>
       <SEOContext.Provider value={seo}>
         <TranslationContext.Provider value={translations}>
-          <Layout page="diensten">
-            <Main>
-              <SEO seo={seo}></SEO>
-              <DienstenHeader diensten={diensten} />
-              <DienstenLijst diensten={diensten} />
-              <Quote quoteId="textQuote3"></Quote>
-              <Contact></Contact>
-              <Faq faqs={faqs}></Faq>
-            </Main>
-          </Layout>
+          <FaqContext.Provider value={faqs}>
+            <Layout page="diensten">
+              <Main>
+                <SEO></SEO>
+                <DienstenHeader diensten={diensten} />
+                <DienstenLijst diensten={diensten} />
+                <Quote quoteId="textQuote3"></Quote>
+                <Contact></Contact>
+                <Faq></Faq>
+              </Main>
+            </Layout>
+          </FaqContext.Provider>
         </TranslationContext.Provider>
       </SEOContext.Provider>
     </PictureContext.Provider>

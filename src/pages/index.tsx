@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-// import PropTypes from 'prop-types';
 
 import {
   Layout,
@@ -18,6 +17,7 @@ import {
   PictureContext,
   FaqContext,
   SEOContext,
+  ParnterContext,
 } from '../utils/contexts';
 import { getDataFromAirtable } from '../utils';
 import {
@@ -40,18 +40,20 @@ const IndexPage = ({
       <SEOContext.Provider value={seo}>
         <TranslationContext.Provider value={translations}>
           <FaqContext.Provider value={faqs}>
-            <Layout page="home">
-              <Main>
-                <SEO seo={seo}></SEO>
-                <HomeWelcome></HomeWelcome>
-                <About></About>
-                <Partners partners={partners}></Partners>
-                <Quote quoteId="textQuote1"></Quote>
-                <Contact></Contact>
-                <Social></Social>
-                <Faq faqs={faqs}></Faq>
-              </Main>
-            </Layout>
+            <ParnterContext.Provider value={partners}>
+              <Layout page="home">
+                <Main>
+                  <SEO></SEO>
+                  <HomeWelcome></HomeWelcome>
+                  <About></About>
+                  <Partners></Partners>
+                  <Quote quoteId="textQuote1"></Quote>
+                  <Contact></Contact>
+                  <Social></Social>
+                  <Faq></Faq>
+                </Main>
+              </Layout>
+            </ParnterContext.Provider>
           </FaqContext.Provider>
         </TranslationContext.Provider>
       </SEOContext.Provider>

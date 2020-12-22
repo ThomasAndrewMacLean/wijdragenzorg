@@ -8,6 +8,7 @@ import {
   TranslationContext,
   PictureContext,
   SEOContext,
+  FaqContext,
 } from '../utils/contexts';
 import { getDataFromAirtable } from '../utils';
 
@@ -16,16 +17,18 @@ const ContactPage = ({ translations, pics, seo, faqs }: ContactPageProps) => {
     <PictureContext.Provider value={pics}>
       <SEOContext.Provider value={seo}>
         <TranslationContext.Provider value={translations}>
-          <Layout page="contact">
-            <Main>
-              <SEO seo={seo}></SEO>
-              <Contact></Contact>
-              <Social></Social>
-              <About></About>
-              <Quote quoteId="textQuote2"></Quote>
-              <Faq faqs={faqs}></Faq>
-            </Main>
-          </Layout>
+          <FaqContext.Provider value={faqs}>
+            <Layout page="contact">
+              <Main>
+                <SEO></SEO>
+                <Contact></Contact>
+                <Social></Social>
+                <About></About>
+                <Quote quoteId="textQuote2"></Quote>
+                <Faq></Faq>
+              </Main>
+            </Layout>
+          </FaqContext.Provider>
         </TranslationContext.Provider>
       </SEOContext.Provider>
     </PictureContext.Provider>

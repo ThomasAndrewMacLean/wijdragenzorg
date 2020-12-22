@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Head from 'next/head';
-import PropTypes from 'prop-types';
 
 import { getSEO } from '../utils';
-import { SEOType } from '../types';
+import { SEOContext } from '../utils/contexts';
 
-const SEO = ({ seo }: { seo: SEOType[] }) => {
+const SEO = ({}) => {
+  const seo = useContext(SEOContext) || [];
+
   return (
     <Head>
       <title>{getSEO(seo, 'title')}</title>
@@ -39,25 +40,4 @@ const SEO = ({ seo }: { seo: SEOType[] }) => {
   );
 };
 
-SEO.propTypes = {
-  seo: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      text: PropTypes.string,
-      pic: PropTypes.arrayOf(
-        PropTypes.shape({
-          url: PropTypes.string.isRequired,
-          thumbnails: PropTypes.shape({
-            large: PropTypes.shape({
-              url: PropTypes.string.isRequired,
-            }),
-            small: PropTypes.shape({
-              url: PropTypes.string.isRequired,
-            }),
-          }),
-        })
-      ),
-    })
-  ).isRequired,
-};
 export default SEO;

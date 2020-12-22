@@ -23,6 +23,7 @@ import {
   PictureContext,
   SEOContext,
   TeamledenContext,
+  FaqContext,
 } from '../utils/contexts';
 import { getDataFromAirtable } from '../utils';
 
@@ -38,17 +39,19 @@ const TeamPage = ({
       <SEOContext.Provider value={seo}>
         <TranslationContext.Provider value={translations}>
           <TeamledenContext.Provider value={teamleden}>
-            <Layout page="team">
-              <Main>
-                <SEO seo={seo}></SEO>
-                <Teamleden teamleden={teamleden} />
-                <Quote quoteId="textQuote2"></Quote>
+            <FaqContext.Provider value={faqs}>
+              <Layout page="team">
+                <Main>
+                  <SEO></SEO>
+                  <Teamleden teamleden={teamleden} />
+                  <Quote quoteId="textQuote2"></Quote>
 
-                <Contact></Contact>
-                <Faq faqs={faqs}></Faq>
-                <About></About>
-              </Main>
-            </Layout>
+                  <Contact></Contact>
+                  <Faq></Faq>
+                  <About></About>
+                </Main>
+              </Layout>
+            </FaqContext.Provider>
           </TeamledenContext.Provider>
         </TranslationContext.Provider>
       </SEOContext.Provider>

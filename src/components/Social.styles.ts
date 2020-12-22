@@ -19,16 +19,25 @@ export const SocialWrapper = styled.section`
   a {
     margin-top: 2rem;
     margin-right: 2rem;
-    display: inline-block;
-  }
-  .logo {
-    width: 45px;
-    height: 45px;
-    opacity: 0.75;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    img {
+      margin-right: 0.5rem;
+    }
+    .logo {
+      width: 45px;
+      height: 45px;
+      opacity: 0.75;
+      transition: all 300ms ease;
+    }
     transition: all 300ms ease;
     &:hover {
-      opacity: 0.9;
       transform: scale(1.1);
+      .logo {
+        opacity: 0.9;
+      }
     }
   }
 `;

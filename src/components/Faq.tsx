@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Image, T } from '.';
 import { FaqsType } from '../types';
 import { convertToHtml } from '../utils';
 import * as Styles from './Faq.styles';
+import { FaqContext } from '../utils/contexts';
 
-type PropsType = {
-  faqs: FaqsType[];
-};
-const Faq = ({ faqs }: PropsType) => {
+type PropsType = {};
+const Faq = ({}: PropsType) => {
+  const faqs = useContext(FaqContext) || [];
+
   return (
     <Styles.FaqWrapper>
       <div className="left">
