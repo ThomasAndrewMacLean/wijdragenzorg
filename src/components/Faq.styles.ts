@@ -7,8 +7,10 @@ export const FaqWrapper = styled.section`
   details {
     max-width: 550px;
     margin-bottom: 1rem;
+    font-weight: 200;
   }
   summary {
+    font-weight: 400;
     cursor: pointer;
     margin-bottom: 1rem;
     outline: none;
