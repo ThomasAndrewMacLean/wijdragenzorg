@@ -1,16 +1,29 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Head from 'next/head';
 
 import { getSEO } from '../utils';
 import { SEOContext } from '../utils/contexts';
 
 const SEO = ({}) => {
+  const [font, setFont] = useState(false);
   const seo = useContext(SEOContext) || [];
+  useEffect(() => {
+    if (document.location.search.includes('schreef')) {
+      setFont(true);
+    }
+  }, []);
 
   return (
     <Head>
       <title>{getSEO(seo, 'title')}</title>
       <link rel="shortcut icon" href={getSEO(seo, 'favicon')} />
+      {font && (
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `body{font-family: 'Roboto Slab', sans-serif !important`,
+          }}
+        ></style>
+      )}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
       <meta name="twitter:card" content="summary" />

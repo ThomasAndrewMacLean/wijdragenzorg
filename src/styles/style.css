@@ -8,6 +8,7 @@
   font-style: normal;
   font-display: swap;
 }
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;700&display=swap');
 :root {
   --background-dark: #f0ad36;
   --colour-gold: #c18a26;
@@ -32,7 +33,7 @@
 }
 html,
 body {
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   width: 100%;
   overflow-x: hidden;
   color: #333;
