@@ -16,10 +16,10 @@ import {
   SEOType,
   FaqsType,
   PartnerType,
-  ComponentNameType,
 } from '../types';
 // @ts-ignore
 import { componentMap } from '../constants/components.tsx';
+import { homePageSections } from '../constants/pages';
 const IndexPage = ({
   translations,
   pics,
@@ -28,15 +28,7 @@ const IndexPage = ({
   partners,
 }: IndexPageProps) => {
   const page = 'home';
-  const pageComponents: ComponentNameType[] = [
-    'homeWelcome',
-    'about',
-    'partners',
-    'quote',
-    'contact',
-    'social',
-    'faq',
-  ];
+
   return (
     <PictureContext.Provider value={pics}>
       <SEOContext.Provider value={seo}>
@@ -46,7 +38,7 @@ const IndexPage = ({
               <Layout page={page}>
                 <Main>
                   <SEO></SEO>
-                  {pageComponents.map((comp, index) => {
+                  {homePageSections.map((comp, index) => {
                     const component = componentMap[comp];
                     if (component) {
                       return (

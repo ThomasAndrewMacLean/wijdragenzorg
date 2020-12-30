@@ -6,7 +6,6 @@ import {
   SEOType,
   TeamLidType,
   FaqsType,
-  ComponentNameType,
 } from '../types';
 
 import { Layout, SEO } from '../components';
@@ -22,6 +21,7 @@ import { getDataFromAirtable } from '../utils';
 import { pageNames } from '../constants';
 //@ts-ignore
 import { componentMap } from '../constants/components.tsx';
+import { teamPageSections } from '../constants/pages';
 
 const TeamPage = ({
   translations,
@@ -31,13 +31,7 @@ const TeamPage = ({
   faqs,
 }: TeamPageProps) => {
   const page = pageNames.team;
-  const pageComponents: ComponentNameType[] = [
-    'teamleden',
-    'quote',
-    'contact',
-    'faq',
-    'about',
-  ];
+
   return (
     <PictureContext.Provider value={pics}>
       <SEOContext.Provider value={seo}>
@@ -47,7 +41,7 @@ const TeamPage = ({
               <Layout page={page}>
                 <Main>
                   <SEO></SEO>
-                  {pageComponents.map((comp, index) => {
+                  {teamPageSections.map((comp, index) => {
                     const component = componentMap[comp];
                     if (component) {
                       return (

@@ -1,12 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  TranslationsType,
-  ImagesType,
-  SEOType,
-  FaqsType,
-  ComponentNameType,
-} from '../types';
+import { TranslationsType, ImagesType, SEOType, FaqsType } from '../types';
 
 import { Layout, SEO } from '../components';
 
@@ -20,17 +14,9 @@ import { getDataFromAirtable } from '../utils';
 import { pageNames } from '../constants';
 //@ts-ignore
 import { componentMap } from '../constants/components.tsx';
+import { regiosPageSections } from '../constants/pages';
 const RegiosPage = ({ translations, pics, seo, faqs }: RegiosPageProps) => {
   const page = pageNames.regios;
-  const pageComponents: ComponentNameType[] = [
-    'regioHeader',
-    'map',
-    'quote',
-    'about',
-    'contact',
-    'social',
-    'faq',
-  ];
 
   return (
     <PictureContext.Provider value={pics}>
@@ -40,7 +26,7 @@ const RegiosPage = ({ translations, pics, seo, faqs }: RegiosPageProps) => {
             <Layout page={page}>
               <Main>
                 <SEO></SEO>
-                {pageComponents.map((comp, index) => {
+                {regiosPageSections.map((comp, index) => {
                   const component = componentMap[comp];
                   if (component) {
                     return (

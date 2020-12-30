@@ -6,7 +6,6 @@ import {
   SEOType,
   DienstType,
   FaqsType,
-  ComponentNameType,
 } from '../types';
 
 import { Layout, SEO } from '../components';
@@ -22,6 +21,7 @@ import { getDataFromAirtable } from '../utils';
 import { pageNames } from '../constants';
 //@ts-ignore
 import { componentMap } from '../constants/components.tsx';
+import { dienstenPageSections } from '../constants/pages';
 
 const DienstenPage = ({
   translations,
@@ -31,14 +31,6 @@ const DienstenPage = ({
   faqs,
 }: DienstenPageProps) => {
   const page = pageNames.diensten;
-  const pageComponents: ComponentNameType[] = [
-    'dienstenHeader',
-    'dienstenLijst',
-    'quote',
-    'contact',
-    'social',
-    'faq',
-  ];
 
   return (
     <PictureContext.Provider value={pics}>
@@ -49,7 +41,7 @@ const DienstenPage = ({
               <Layout page={page}>
                 <Main>
                   <SEO></SEO>
-                  {pageComponents.map((comp, index) => {
+                  {dienstenPageSections.map((comp, index) => {
                     const component = componentMap[comp];
                     if (component) {
                       return (

@@ -1,12 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  TranslationsType,
-  ImagesType,
-  SEOType,
-  FaqsType,
-  ComponentNameType,
-} from '../types';
+import { TranslationsType, ImagesType, SEOType, FaqsType } from '../types';
 
 import { Layout, SEO } from '../components';
 
@@ -20,16 +14,11 @@ import { getDataFromAirtable } from '../utils';
 import { pageNames } from '../constants';
 //@ts-ignore
 import { componentMap } from '../constants/components.tsx';
+import { contactPageSections } from '../constants/pages';
 
 const ContactPage = ({ translations, pics, seo, faqs }: ContactPageProps) => {
   const page = pageNames.contact;
-  const pageComponents: ComponentNameType[] = [
-    'contact',
-    'social',
-    'about',
-    'quote',
-    'faq',
-  ];
+
   return (
     <PictureContext.Provider value={pics}>
       <SEOContext.Provider value={seo}>
@@ -38,7 +27,7 @@ const ContactPage = ({ translations, pics, seo, faqs }: ContactPageProps) => {
             <Layout page={page}>
               <Main>
                 <SEO></SEO>
-                {pageComponents.map((comp, index) => {
+                {contactPageSections.map((comp, index) => {
                   const component = componentMap[comp];
                   if (component) {
                     return (
