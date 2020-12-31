@@ -4,7 +4,7 @@ export const HomeWelcomWrapper = styled.section`
   display: flex;
   justify-content: space-evenly;
 
-  button {
+  .btn {
     margin-top: 2rem;
     margin-bottom: 2rem;
   }

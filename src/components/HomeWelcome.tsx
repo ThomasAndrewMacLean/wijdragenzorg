@@ -11,13 +11,13 @@ const HomeWelcom = ({}: PropsType) => {
       <div className="left">
         <T translationKey="welcomeText"></T>
 
-        <button className="btn btn-primary">
-          <Link href={prefix + 'contact'}>
-            <a>
-              <T translationKey="cta"></T>
-            </a>
-          </Link>
-        </button>
+        {/* <button className="btn btn-primary"> */}
+        <Link href={prefix + 'contact'}>
+          <a className="btn btn-primary">
+            <T translationKey="cta"></T>
+          </a>
+        </Link>
+        {/* </button> */}
       </div>
 
       <Image

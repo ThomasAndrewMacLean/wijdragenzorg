@@ -64,6 +64,9 @@ p {
   /* text-transform: uppercase; */
   transition: all 300ms ease;
   z-index: 1;
+  text-align: center;
+  color: inherit;
+  text-decoration: none;
 }
 
 .btn a {
