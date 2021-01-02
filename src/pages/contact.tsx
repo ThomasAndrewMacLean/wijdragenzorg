@@ -26,7 +26,7 @@ const ContactPage = ({ translations, pics, seo, faqs }: ContactPageProps) => {
           <FaqContext.Provider value={faqs}>
             <Layout page={page}>
               <Main>
-                <SEO></SEO>
+                <SEO page={page}></SEO>
                 {contactPageSections.map((comp, index) => {
                   const component = componentMap[comp];
                   if (component) {

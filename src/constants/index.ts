@@ -1,7 +1,8 @@
 export const pageNames = {
   home: 'home',
   diensten: 'diensten',
-  regios: 'regios',
+  regios: "regio's",
   team: 'team',
   contact: 'contact',
+  privacy: 'privacy',
 };

@@ -40,7 +40,7 @@ const TeamPage = ({
             <FaqContext.Provider value={faqs}>
               <Layout page={page}>
                 <Main>
-                  <SEO></SEO>
+                <SEO page={page}></SEO>
                   {teamPageSections.map((comp, index) => {
                     const component = componentMap[comp];
                     if (component) {

@@ -25,7 +25,7 @@ const RegiosPage = ({ translations, pics, seo, faqs }: RegiosPageProps) => {
           <FaqContext.Provider value={faqs}>
             <Layout page={page}>
               <Main>
-                <SEO></SEO>
+              <SEO page={page}></SEO>
                 {regiosPageSections.map((comp, index) => {
                   const component = componentMap[comp];
                   if (component) {

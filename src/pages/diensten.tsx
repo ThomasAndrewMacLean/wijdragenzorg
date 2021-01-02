@@ -40,7 +40,7 @@ const DienstenPage = ({
             <DienstenContext.Provider value={diensten}>
               <Layout page={page}>
                 <Main>
-                  <SEO></SEO>
+                  <SEO page={page}></SEO>
                   {dienstenPageSections.map((comp, index) => {
                     const component = componentMap[comp];
                     if (component) {

@@ -37,7 +37,7 @@ const IndexPage = ({
             <ParnterContext.Provider value={partners}>
               <Layout page={page}>
                 <Main>
-                  <SEO></SEO>
+                  <SEO page={page}></SEO>
                   {homePageSections.map((comp, index) => {
                     const component = componentMap[comp];
                     if (component) {

@@ -10,15 +10,17 @@ import {
   SEOContext,
 } from '../utils/contexts';
 import { getDataFromAirtable } from '../utils';
+import { pageNames } from '../constants';
 
 const PrivacyPage = ({ translations, pics, seo }: PrivacyPageProps) => {
+  const page = pageNames.privacy;
   return (
     <PictureContext.Provider value={pics}>
       <SEOContext.Provider value={seo}>
         <TranslationContext.Provider value={translations}>
           <Layout page="privacy">
             <Main>
-              <SEO></SEO>
+            <SEO page={page}></SEO>
               <h1>Privacy</h1>
             </Main>
           </Layout>
