@@ -71,3 +71,24 @@ export const getDataFromAirtable = async (): Promise<{
     ...dataFromAirtable,
   };
 };
+
+export const getStructuredDataString = (faqs: FaqsType[]): string => {
+  return `{
+      "@context": "http://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        ${faqs
+          .map((faq) => {
+            return (
+              '{"@type": "Question","name": "' +
+              faq.Vraag.replace('\n', ' ') +
+              '","acceptedAnswer": { "@type": "Answer", "text": "' +
+              faq.Antwoord.replace('\n', ' ') +
+              '"}}'
+            );
+          })
+          .join(',')}
+       
+      ]
+  }`;
+};

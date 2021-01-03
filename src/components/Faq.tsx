@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import { Image, T } from '.';
+import Head from 'next/head';
 
-import { convertToHtml } from '../utils';
+import { convertToHtml, getStructuredDataString } from '../utils';
 import * as Styles from './Faq.styles';
 import { FaqContext } from '../utils/contexts';
 
@@ -11,6 +12,12 @@ const Faq = ({}: PropsType) => {
 
   return (
     <Styles.FaqWrapper>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: getStructuredDataString(faqs) }}
+        />
+      </Head>
       <div className="left">
         <h2>
           <T translationKey="faqTitel"></T>

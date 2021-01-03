@@ -9,6 +9,29 @@ type SeoType = {
 const SEO = ({ page }: SeoType) => {
   const seo = useContext(SEOContext) || [];
 
+//   <script type='application/ld+json'>
+// {
+//     "@context": "http://schema.org/",
+//     "@type": "Organization",
+//     "legalName": "name",
+//     "url": "url.com",
+//     "contactPoint": {
+//         "@type": "ContactPoint",
+//         "telephone": "telephone",
+//         "contactType": "contact type"
+//     },
+//     "logo": "logourl.com/test.jpg",
+//     "sameAs": "social profiles",
+//     "address": {
+//         "@type": "PostalAddress",
+//         "streetAddress": "address",
+//         "addressLocality": "city",
+//         "addressRegion": "state region",
+//         "postalCode": "zip",
+//         "addressCountry": "country"
+//     }
+// }
+// </script>
   return (
     <Head>
       <title>
