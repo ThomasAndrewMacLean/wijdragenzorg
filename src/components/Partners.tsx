@@ -29,6 +29,7 @@ const Partners = ({}: PropsType) => {
       behavior: 'smooth',
     });
   };
+  if (!partners.length) return null;
   return (
     <Styles.PartnersWrapper className="fullwidth">
       <h2 className="content arrowWrap">
