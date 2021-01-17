@@ -4,8 +4,16 @@ export const PartnersWrapper = styled.section`
   ul {
     padding: 2rem;
     padding-left: calc(50vw - 450px);
+
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: calc(50vw - 450px);
+    li {
+      scroll-snap-align: start;
+    }
+
     @media only screen and (max-width: 1000px) {
       padding-left: 5vw;
+      scroll-padding-left: 5vw;
     }
 
     margin-left: 0rem;

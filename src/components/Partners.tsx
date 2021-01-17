@@ -11,21 +11,32 @@ const Partners = ({}: PropsType) => {
   const sliderRef = useRef(null);
 
   const slideLeft = () => {
+    const paddingLeft = window.getComputedStyle(
+      document.querySelector('.slider')!
+    ).paddingLeft;
     //@ts-ignore
     sliderRef.current.scrollBy({
       top: 0,
       left:
         //@ts-ignore
-        -sliderRef.current.scrollWidth / sliderRef.current.childElementCount,
+        -(sliderRef.current.scrollWidth - parseInt(paddingLeft)) /
+        //@ts-ignore
+        sliderRef.current.childElementCount,
       behavior: 'smooth',
     });
   };
   const slideRight = () => {
+    const paddingLeft = window.getComputedStyle(
+      document.querySelector('.slider')!
+    ).paddingLeft;
     //@ts-ignore
     sliderRef.current.scrollBy({
       top: 0,
-      //@ts-ignore
-      left: sliderRef.current.scrollWidth / sliderRef.current.childElementCount,
+      left:
+        //@ts-ignore
+        (sliderRef.current.scrollWidth - parseInt(paddingLeft)) /
+        //@ts-ignore
+        sliderRef.current.childElementCount,
       behavior: 'smooth',
     });
   };
@@ -35,7 +46,7 @@ const Partners = ({}: PropsType) => {
       <h2 className="content arrowWrap">
         <T translationKey="partnersTitel"></T>
       </h2>
-      <ul ref={sliderRef}>
+      <ul ref={sliderRef} className="slider">
         {(partners || []).map((partner, index) => {
           return (
             <li key={index}>
