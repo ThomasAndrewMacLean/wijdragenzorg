@@ -16,28 +16,29 @@ const Teamleden = ({}: PropsType) => {
         <T translationKey="teamOmschrijving"></T>
         <Image imageKey="team-image"></Image>
       </div>
+      {!!teamleden.length && (
+        <ul className="teamleden">
+          {teamleden.map((teamlid, index) => {
+            return (
+              <li key={index}>
+                <img src={teamlid.Foto[0].thumbnails.large.url}></img>
+                <div className="textWrap">
+                  <h4>{teamlid.Naam}</h4>
 
-      <ul className="teamleden">
-        {teamleden.map((teamlid, index) => {
-          return (
-            <li key={index}>
-              <img src={teamlid.Foto[0].thumbnails.large.url}></img>
-              <div className="textWrap">
-                <h4>{teamlid.Naam}</h4>
+                  <div
+                    className="omschrijvingText"
+                    dangerouslySetInnerHTML={{
+                      __html: convertToHtml(teamlid.Omschrijving),
+                    }}
+                  ></div>
 
-                <div
-                  className="omschrijvingText"
-                  dangerouslySetInnerHTML={{
-                    __html: convertToHtml(teamlid.Omschrijving),
-                  }}
-                ></div>
-
-                <p>{teamlid.Telefoon}</p>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
+                  <p>{teamlid.Telefoon}</p>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </Styles.TeamledenWrapper>
   );
 };
