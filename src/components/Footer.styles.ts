@@ -34,6 +34,9 @@ export const FooterWrapper = styled.footer`
       }
     }
   }
+  .link {
+    text-decoration: underline;
+  }
   .footerWrap {
     max-width: 900px;
     margin: auto;
@@ -41,6 +44,22 @@ export const FooterWrapper = styled.footer`
     justify-content: space-between;
     align-items: baseline;
     padding: 4rem 0;
+  }
+
+  .westerlingMacLean {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 0.9rem;
+    padding: 1rem;
+    .heart {
+      padding: 0 0.4ch;
+      color: orangered;
+    }
+    a {
+      text-decoration: underline;
+      padding-left: 0.5ch;
+    }
   }
 
   @media only screen and (max-width: 660px) {

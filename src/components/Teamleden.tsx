@@ -14,7 +14,7 @@ const Teamleden = ({}: PropsType) => {
 
       <div className="omschrijving">
         <T translationKey="teamOmschrijving"></T>
-        <Image imageKey="cat-image"></Image>
+        <Image imageKey="team-image"></Image>
       </div>
 
       <ul className="teamleden">

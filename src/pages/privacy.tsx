@@ -11,7 +11,7 @@ import {
 } from '../utils/contexts';
 import { getDataFromAirtable } from '../utils';
 import { pageNames } from '../constants';
-
+import { T } from '../components';
 const PrivacyPage = ({ translations, pics, seo }: PrivacyPageProps) => {
   const page = pageNames.privacy;
   return (
@@ -20,7 +20,7 @@ const PrivacyPage = ({ translations, pics, seo }: PrivacyPageProps) => {
         <TranslationContext.Provider value={translations}>
           <Layout page={page}>
             <Main>
-              <h1>Privacy</h1>
+              <T translationKey="privacyText" />
             </Main>
           </Layout>
         </TranslationContext.Provider>
@@ -30,7 +30,7 @@ const PrivacyPage = ({ translations, pics, seo }: PrivacyPageProps) => {
 };
 
 const Main = styled.main`
-  background: var(--background-dark);
+  
 `;
 
 export const getStaticProps = async () => {

@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import * as Styles from './Footer.styles';
 import { SEOContext } from '../utils/contexts';
 import { T, Image } from './';
+import Link from 'next/link';
+import { prefix } from '../utils';
 
 type PropsType = {};
 const Footer = ({}: PropsType) => {
@@ -34,9 +36,16 @@ const Footer = ({}: PropsType) => {
             <T translationKey="contactBTW"></T>
           </div>
           <div className="spacer">
-            <a href={'mailto:' + emailAdres} target="blank">
+            <a className="link" href={'mailto:' + emailAdres} target="blank">
               <T translationKey="contactEmail"></T>
             </a>
+          </div>
+          <div className="spacer">
+            <Link href={prefix + 'privacy'} passHref>
+              <a className="link">
+                <T translationKey="privaycLinkText"></T>
+              </a>
+            </Link>
           </div>
         </div>
         <div className="middle"></div>
@@ -51,6 +60,17 @@ const Footer = ({}: PropsType) => {
             <Image style={{ height: '25px' }} imageKey="instagramLogo"></Image>
           </a>
         </div>
+      </div>
+      <div className="westerlingMacLean">
+        gemaakt met <span className="heart"> ♥ </span> door{' '}
+        <a
+          href="https://westerling-maclean.be/"
+          target="blank"
+          rel="noopener noreferrer"
+          style={{ display: 'inline-flex' }}
+        >
+          westerling & maclean
+        </a>
       </div>
     </Styles.FooterWrapper>
   );
