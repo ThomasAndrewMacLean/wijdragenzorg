@@ -38,6 +38,7 @@ export const DienstWrapper = styled.li<{ even: boolean }>`
   }
 
   .text {
+    ul{margin-bottom: 3rem;}
     /* padding-left: ${(props) => (props.even ? '2rem' : '0')};
     padding-right: ${(props) => (props.even ? '0' : '2rem')}; */
     p + p {

@@ -10,11 +10,21 @@ export const pageNames = {
   covid: 'covid',
 };
 
-export const covidPageSections: ComponentNameType[] = [
+export const homePageSections: ComponentNameType[] = [
+  'homeWelcome',
+  'covidLink',
+  'about',
+  'partners',
+  'quote',
   'contact',
   'social',
-  'about',
-  'quote',
+  'faq',
+];
+
+export const covidPageSections: ComponentNameType[] = [
+  'highLight',
+  'social',
+
   'faq',
 ];
 
@@ -29,17 +39,6 @@ export const contactPageSections: ComponentNameType[] = [
 export const dienstenPageSections: ComponentNameType[] = [
   'dienstenHeader',
   'dienstenLijst',
-  'quote',
-  'contact',
-  'social',
-  'faq',
-];
-
-export const homePageSections: ComponentNameType[] = [
-  'homeWelcome',
-  'about',
-  'covidLink',
-  'partners',
   'quote',
   'contact',
   'social',

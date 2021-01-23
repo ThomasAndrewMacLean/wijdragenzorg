@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const HeaderWrapper = styled.header`
   width: 100vw;
-  background: var(--colour-white);
+  background: var(--background-gradient);
   left: 0;
   margin-left: calc(450px - 50vw);
 
@@ -16,6 +16,7 @@ export const HeaderWrapper = styled.header`
       text-decoration: none;
     }
     h1 {
+      text-shadow: 0 0 10px white;
       font-weight: 100;
       font-family: 'La Belle Aurore', cursive;
       em {

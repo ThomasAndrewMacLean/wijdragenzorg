@@ -14,7 +14,8 @@ import {
   Map,
   Teamleden,
   HighlightText,
-  CovidLink
+  CovidLink,
+  CovidHeader,
 } from '../components';
 import { ComponentNameType } from '../types';
 
@@ -32,6 +33,6 @@ export const componentMap: { [component in ComponentNameType]: JSX.Element } = {
   regioHeader: <RegioHeader></RegioHeader>,
   teamleden: <Teamleden></Teamleden>,
   highLight: <HighlightText></HighlightText>,
-  covidLink: <CovidLink></CovidLink>
+  covidLink: <CovidLink></CovidLink>,
+  covidHeader: <CovidHeader></CovidHeader>,
 };
-

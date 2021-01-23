@@ -57,4 +57,5 @@ export type ComponentNameType =
   | 'regioHeader'
   | 'teamleden'
   | 'highLight'
-  | 'covidLink';
+  | 'covidLink'
+  | 'covidHeader';
