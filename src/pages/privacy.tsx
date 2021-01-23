@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { TranslationsType, ImagesType, SEOType } from '../types';
 
-import { Layout, SEO } from '../components';
+import { Layout } from '../components';
 
 import {
   TranslationContext,
