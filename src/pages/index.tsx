@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Layout, SEO } from '../components';
+import { Layout,   } from '../components';
 import {
   TranslationContext,
   PictureContext,
@@ -19,7 +19,8 @@ import {
 } from '../types';
 // @ts-ignore
 import { componentMap } from '../constants/components.tsx';
-import { homePageSections } from '../constants/pages';
+import { homePageSections } from '../constants';
+
 const IndexPage = ({
   translations,
   pics,
@@ -37,8 +38,7 @@ const IndexPage = ({
             <ParnterContext.Provider value={partners}>
               <Layout page={page}>
                 <Main>
-                  <SEO page={page}></SEO>
-                  {homePageSections.map((comp, index) => {
+                   {homePageSections.map((comp, index) => {
                     const component = componentMap[comp];
                     if (component) {
                       return (

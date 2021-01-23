@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { TranslationsType, ImagesType, SEOType } from '../types';
 
-import { Layout, SEO } from '../components';
+import { Layout,   } from '../components';
 
 import {
   TranslationContext,
@@ -11,16 +11,27 @@ import {
 } from '../utils/contexts';
 import { getDataFromAirtable } from '../utils';
 import { pageNames } from '../constants';
+//@ts-ignore
+import { componentMap } from '../constants/components.tsx';
+import { covidPageSections } from '../constants';
 
-const PrivacyPage = ({ translations, pics, seo }: PrivacyPageProps) => {
-  const page = pageNames.privacy;
+const CovidPage = ({ translations, pics, seo }: CovidPageProps) => {
+  const page = pageNames.covid;
+
   return (
     <PictureContext.Provider value={pics}>
       <SEOContext.Provider value={seo}>
         <TranslationContext.Provider value={translations}>
           <Layout page={page}>
             <Main>
-              <h1>Privacy</h1>
+               {covidPageSections.map((comp, index) => {
+                const component = componentMap[comp];
+                if (component) {
+                  return (
+                    <component.type page={page} key={index}></component.type>
+                  );
+                }
+              })}
             </Main>
           </Layout>
         </TranslationContext.Provider>
@@ -43,9 +54,9 @@ export const getStaticProps = async () => {
     },
   };
 };
-type PrivacyPageProps = {
+type CovidPageProps = {
   translations: TranslationsType[];
   pics: ImagesType[];
   seo: SEOType[];
 };
-export default PrivacyPage;
+export default CovidPage;

@@ -8,7 +8,7 @@ import {
   FaqsType,
 } from '../types';
 
-import { Layout, SEO } from '../components';
+import { Layout  } from '../components';
 
 import {
   TranslationContext,
@@ -21,7 +21,7 @@ import { getDataFromAirtable } from '../utils';
 import { pageNames } from '../constants';
 //@ts-ignore
 import { componentMap } from '../constants/components.tsx';
-import { teamPageSections } from '../constants/pages';
+import { teamPageSections } from '../constants';
 
 const TeamPage = ({
   translations,
@@ -40,7 +40,6 @@ const TeamPage = ({
             <FaqContext.Provider value={faqs}>
               <Layout page={page}>
                 <Main>
-                <SEO page={page}></SEO>
                   {teamPageSections.map((comp, index) => {
                     const component = componentMap[comp];
                     if (component) {

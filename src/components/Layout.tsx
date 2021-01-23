@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-import { Footer, Header } from '.';
+import { Footer, Header, SEO } from '.';
 import * as Styles from './Layout.styles';
 
 type LayoutProps = {
@@ -10,6 +10,7 @@ type LayoutProps = {
 const Layout = ({ children, page }: LayoutProps) => {
   return (
     <Styles.Main>
+      <SEO page={page}></SEO>
       <Header page={page} />
       <div className="pageWrap">{children}</div>
       <Footer />

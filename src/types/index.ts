@@ -43,17 +43,18 @@ export type PartnerType = {
   Foto: ImageType[];
 };
 
-
 export type ComponentNameType =
-| 'homeWelcome'
-| 'about'
-| 'partners'
-| 'quote'
-| 'contact'
-| 'social'
-| 'faq'
-| 'dienstenHeader'
-| 'dienstenLijst'
-| 'map'
-| 'regioHeader'
-| 'teamleden';
+  | 'homeWelcome'
+  | 'about'
+  | 'partners'
+  | 'quote'
+  | 'contact'
+  | 'social'
+  | 'faq'
+  | 'dienstenHeader'
+  | 'dienstenLijst'
+  | 'map'
+  | 'regioHeader'
+  | 'teamleden'
+  | 'highLight'
+  | 'covidLink';

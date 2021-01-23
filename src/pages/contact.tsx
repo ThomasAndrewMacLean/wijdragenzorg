@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { TranslationsType, ImagesType, SEOType, FaqsType } from '../types';
 
-import { Layout, SEO } from '../components';
+import { Layout } from '../components';
 
 import {
   TranslationContext,
@@ -14,7 +14,7 @@ import { getDataFromAirtable } from '../utils';
 import { pageNames } from '../constants';
 //@ts-ignore
 import { componentMap } from '../constants/components.tsx';
-import { contactPageSections } from '../constants/pages';
+import { contactPageSections } from '../constants';
 
 const ContactPage = ({ translations, pics, seo, faqs }: ContactPageProps) => {
   const page = pageNames.contact;
@@ -26,7 +26,6 @@ const ContactPage = ({ translations, pics, seo, faqs }: ContactPageProps) => {
           <FaqContext.Provider value={faqs}>
             <Layout page={page}>
               <Main>
-                <SEO page={page}></SEO>
                 {contactPageSections.map((comp, index) => {
                   const component = componentMap[comp];
                   if (component) {

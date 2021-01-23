@@ -8,7 +8,7 @@ import {
   FaqsType,
 } from '../types';
 
-import { Layout, SEO } from '../components';
+import { Layout,   } from '../components';
 
 import {
   TranslationContext,
@@ -21,7 +21,7 @@ import { getDataFromAirtable } from '../utils';
 import { pageNames } from '../constants';
 //@ts-ignore
 import { componentMap } from '../constants/components.tsx';
-import { dienstenPageSections } from '../constants/pages';
+import { dienstenPageSections } from '../constants';
 
 const DienstenPage = ({
   translations,
@@ -40,8 +40,7 @@ const DienstenPage = ({
             <DienstenContext.Provider value={diensten}>
               <Layout page={page}>
                 <Main>
-                  <SEO page={page}></SEO>
-                  {dienstenPageSections.map((comp, index) => {
+                   {dienstenPageSections.map((comp, index) => {
                     const component = componentMap[comp];
                     if (component) {
                       return (
