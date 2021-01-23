@@ -16,9 +16,22 @@ export const FooterWrapper = styled.footer`
 
   .right {
     font-weight: 200;
-
     a {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
       text-align: right;
+    }
+    img {
+      padding-left: 0.5rem;
+      opacity: 0.7;
+      transition: all 300ms ease;
+    }
+    a:hover {
+      img {
+        transform: scale(1.1);
+        opacity: 1;
+      }
     }
   }
   .footerWrap {

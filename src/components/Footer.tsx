@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import * as Styles from './Footer.styles';
 import { SEOContext } from '../utils/contexts';
-import { T } from './';
+import { T, Image } from './';
 
 type PropsType = {};
 const Footer = ({}: PropsType) => {
@@ -26,7 +26,7 @@ const Footer = ({}: PropsType) => {
           <div className="spacer">
             <T translationKey="contactAdres"></T>
           </div>
-          <br/>
+          <br />
           <div className="spacer">
             <T translationKey="contactTelefoon"></T>
           </div>
@@ -43,10 +43,12 @@ const Footer = ({}: PropsType) => {
         <div className="right">
           <a href={facebookLink} target="blank" rel="noopener noreferrer">
             facebook
+            <Image style={{ height: '25px' }} imageKey="facebookLogo"></Image>
           </a>
 
           <a href={instagramLink} target="blank" rel="noopener noreferrer">
             instagram
+            <Image style={{ height: '25px' }} imageKey="instagramLogo"></Image>
           </a>
         </div>
       </div>
