@@ -17,6 +17,8 @@ const Footer = ({}: PropsType) => {
   const emailAdres =
     seoFromContext.find((x) => x.id === 'emailAdres')?.text || '';
 
+  const telephone =
+    seoFromContext.find((x) => x.id === 'telefoonNummer')?.text || '';
   return (
     <Styles.FooterWrapper className="fullwidth">
       <div className="footerWrap">
@@ -30,7 +32,9 @@ const Footer = ({}: PropsType) => {
           </div>
           <br />
           <div className="spacer">
-            <T translationKey="contactTelefoon"></T>
+            <a className="link" href={'tel:' + telephone}>
+              <T translationKey="contactTelefoon"></T>
+            </a>
           </div>
           <div className="spacer">
             <T translationKey="contactBTW"></T>
