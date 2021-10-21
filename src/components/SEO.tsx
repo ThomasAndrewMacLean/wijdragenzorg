@@ -59,7 +59,7 @@ const SEO = ({ page }: SeoType) => {
       <meta name="twitter:description" content={getSEO(seo, 'description')} />
       <meta name="twitter:image" content={getSEO(seo, 'twitterCard')} />
 
-      <meta name="twitter:creator" content={getSEO(seo, 'twitterName')} />
+      {/* <meta name="twitter:creator" content={getSEO(seo, 'twitterName')} /> */}
 
       <meta property="og:type" content="website" />
       <meta property="og:title" content={getSEO(seo, 'title')} />
