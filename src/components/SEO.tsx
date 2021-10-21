@@ -9,31 +9,43 @@ type SeoType = {
 const SEO = ({ page }: SeoType) => {
   const seo = useContext(SEOContext) || [];
 
-//   <script type='application/ld+json'>
-// {
-//     "@context": "http://schema.org/",
-//     "@type": "Organization",
-//     "legalName": "name",
-//     "url": "url.com",
-//     "contactPoint": {
-//         "@type": "ContactPoint",
-//         "telephone": "telephone",
-//         "contactType": "contact type"
-//     },
-//     "logo": "logourl.com/test.jpg",
-//     "sameAs": "social profiles",
-//     "address": {
-//         "@type": "PostalAddress",
-//         "streetAddress": "address",
-//         "addressLocality": "city",
-//         "addressRegion": "state region",
-//         "postalCode": "zip",
-//         "addressCountry": "country"
-//     }
-// }
-// </script>
+  //   <script type='application/ld+json'>
+  // {
+  //     "@context": "http://schema.org/",
+  //     "@type": "Organization",
+  //     "legalName": "name",
+  //     "url": "url.com",
+  //     "contactPoint": {
+  //         "@type": "ContactPoint",
+  //         "telephone": "telephone",
+  //         "contactType": "contact type"
+  //     },
+  //     "logo": "logourl.com/test.jpg",
+  //     "sameAs": "social profiles",
+  //     "address": {
+  //         "@type": "PostalAddress",
+  //         "streetAddress": "address",
+  //         "addressLocality": "city",
+  //         "addressRegion": "state region",
+  //         "postalCode": "zip",
+  //         "addressCountry": "country"
+  //     }
+  // }
+  // </script>
   return (
     <Head>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','${getSEO(seo, 'GTM')}');
+        `,
+        }}
+      ></script>
+
       <title>
         {getSEO(seo, 'title')} | {page}
       </title>
