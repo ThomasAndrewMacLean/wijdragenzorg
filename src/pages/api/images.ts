@@ -33,6 +33,9 @@ export default async function handler(req, res) {
           if(!p.thumbnails){
             console.log("no thumbnails found for ", e.id, " ", p.filename)
           }
+
+
+          // load thumbnail from airtable
            const response2 = await fetch(p.thumbnails.large.url);
           const buffer2 = await response2.buffer();
           fs.writeFile(pathThumb, buffer2, () =>
