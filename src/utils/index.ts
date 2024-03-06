@@ -25,7 +25,8 @@ export const getImageUrl = (context: any, id: string, full: boolean) => {
   if (!foundPic) {
     console.error('Picture not found!', id);
   }
-  return full ? foundPic?.pic[0].url : foundPic?.pic[0].thumbnails.large.url;
+  return full ? '/images/' + id + '-0' : '/images/thumbs/' + id + '-0';
+  // return full ? foundPic?.pic[0].url : foundPic?.pic[0].thumbnails.large.url;
 };
 
 export const getSEO = (context: SEOType[], id: string) => {
