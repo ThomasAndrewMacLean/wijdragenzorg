@@ -12,8 +12,8 @@ const Footer = ({}: PropsType) => {
   const facebookLink =
     seoFromContext.find((x) => x.id === 'facebookLink')?.text || '';
 
-  const instagramLink =
-    seoFromContext.find((x) => x.id === 'instagramLink')?.text || '';
+  // const instagramLink =
+  //   seoFromContext.find((x) => x.id === 'instagramLink')?.text || '';
   const emailAdres =
     seoFromContext.find((x) => x.id === 'emailAdres')?.text || '';
 
@@ -59,10 +59,10 @@ const Footer = ({}: PropsType) => {
             <Image style={{ height: '25px' }} imageKey="facebookLogo"></Image>
           </a>
 
-          <a href={instagramLink} target="blank" rel="noopener noreferrer">
+          {/* <a href={instagramLink} target="blank" rel="noopener noreferrer">
             instagram
             <Image style={{ height: '25px' }} imageKey="instagramLogo"></Image>
-          </a>
+          </a> */}
         </div>
       </div>
       <div className="westerlingMacLean">

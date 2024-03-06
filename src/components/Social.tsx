@@ -10,8 +10,8 @@ const Social = ({}: PropsType) => {
   const facebookLink =
     seoFromContext.find((x) => x.id === 'facebookLink')?.text || '';
 
-  const instagramLink =
-    seoFromContext.find((x) => x.id === 'instagramLink')?.text || '';
+  // const instagramLink =
+  //   seoFromContext.find((x) => x.id === 'instagramLink')?.text || '';
 
   return (
     <Styles.SocialWrapper className="fullwidth">
@@ -28,9 +28,9 @@ const Social = ({}: PropsType) => {
           <a href={facebookLink} target="_blank" rel="noopener noreferrer">
             <Image className="logo" imageKey="facebookLogo"></Image> Facebook
           </a>
-          <a href={instagramLink} target="_blank" rel="noopener noreferrer">
+          {/* <a href={instagramLink} target="_blank" rel="noopener noreferrer">
             <Image className="logo" imageKey="instagramLogo"></Image> Instagram
-          </a>
+          </a> */}
         </div>
       </div>
     </Styles.SocialWrapper>

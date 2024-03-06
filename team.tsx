@@ -6,9 +6,9 @@ import {
   SEOType,
   TeamLidType,
   FaqsType,
-} from '../types';
+} from './src/types';
 
-import { Layout  } from '../components';
+import { Layout  } from './src/components';
 
 import {
   TranslationContext,
@@ -16,12 +16,12 @@ import {
   SEOContext,
   TeamledenContext,
   FaqContext,
-} from '../utils/contexts';
-import { getDataFromAirtable } from '../utils';
-import { pageNames } from '../constants';
+} from './src/utils/contexts';
+import { getDataFromAirtable } from './src/utils';
+import { pageNames } from './src/constants';
 //@ts-ignore
-import { componentMap } from '../constants/components.tsx';
-import { teamPageSections } from '../constants';
+import { componentMap } from './src/constants/components';
+import { teamPageSections } from './src/constants';
 
 const TeamPage = ({
   translations,
